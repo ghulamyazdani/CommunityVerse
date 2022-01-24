@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   padding: 0;
@@ -15,4 +19,7 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.container {
+  background-color: rgb(79, 79, 158);
 }
