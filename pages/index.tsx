@@ -19,7 +19,7 @@ const Home: NextPage<any> = ({ posts }) => {
       </Head>
       <div className="posts">
         {posts.map((post: post, index: number) => {
-          return <h1 key={index}>{post.frontmatter.title}</h1>;
+          return <h2 key={index}>{post.frontmatter.title}</h2>;
         })}
       </div>
     </div>
