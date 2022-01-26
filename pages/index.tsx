@@ -7,6 +7,7 @@ import path from "path";
 import matter from "gray-matter";
 import Post from "../components/Post";
 import { postInt } from "../types/interface";
+import { sortByDate } from "../utils";
 
 const Home: NextPage<any> = ({ posts }) => {
   return (
@@ -45,7 +46,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }

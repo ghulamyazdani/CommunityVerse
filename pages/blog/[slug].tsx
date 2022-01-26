@@ -1,13 +1,32 @@
+/* eslint-disable @next/next/link-passhref */
+/* eslint-disable @next/next/no-img-element */
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import marked from "marked";
+import { marked } from "marked";
 import Link from "next/link";
 import { slugProps } from "../../types/interface";
 
-export default function Postpage({ frontmatter, content, slug }: slugProps) {
-  console.log(frontmatter, content, slug);
-  return <div>{content}</div>;
+export default function Postpage({
+  frontmatter: { title, date, cover_image },
+  content,
+  slug,
+}: slugProps) {
+  return (
+    <>
+      <Link href="/">
+        <div className="btn btn-back">Go Back</div>
+      </Link>
+      <div className="card card-page">
+        <h1 className="post-title">{title}</h1>
+        <div className="post-date">Posted on {date}</div>
+        <img src={cover_image} alt="" />
+        <div className="post-body">
+          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+        </div>
+      </div>
+    </>
+  );
 }
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join("posts"));
