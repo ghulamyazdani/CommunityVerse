@@ -76,12 +76,14 @@ header a {
 .posts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 1rem;
   margin-top: 30px;
 }
 
 .card {
   padding: 15px;
+  /* height: 30rem; */
+  width: 25rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

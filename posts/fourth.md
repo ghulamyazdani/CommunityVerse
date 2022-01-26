@@ -1,7 +1,12 @@
 ---
-title: "Fourth Post"
+title: "Intro to Nextjs, How to build 
+server side app with next"
 date: "2020-01-04"
-excerpt: "This is the first post"
+excerpt: "Next.js gives you the best developer experience 
+with all the features you need for production:
+ hybrid static & server rendering, TypeScript 
+support, smart bundling, route pre-fetching,
+and more. No config needed."
 cover_image: "/images/laptop.jpg"
 ---
 
