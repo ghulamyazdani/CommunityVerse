@@ -5,11 +5,8 @@ import "../styles/Home.module.scss";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-interface post {
-  frontmatter: {
-    title: string;
-  };
-}
+import Post from "../components/Post";
+import { postInt } from "../types/interface";
 
 const Home: NextPage<any> = ({ posts }) => {
   return (
@@ -18,8 +15,8 @@ const Home: NextPage<any> = ({ posts }) => {
         <title>Create Next App</title>
       </Head>
       <div className="posts">
-        {posts.map((post: post, index: number) => {
-          return <h2 key={index}>{post.frontmatter.title}</h2>;
+        {posts.map((post: postInt, index: number) => {
+          return <Post key={index} post={post} />;
         })}
       </div>
     </div>
