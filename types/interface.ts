@@ -2,6 +2,7 @@ type front = {
   title: string;
   date: Date;
   excerpt: string;
+  tag: string;
   cover_image: string;
 };
 

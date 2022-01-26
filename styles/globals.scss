@@ -74,10 +74,14 @@ header a {
 }
 
 .posts {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 3rem;
   margin-top: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* padding: 3rem; */
+  justify-content: center;
 }
 
 .card {
@@ -86,6 +90,11 @@ header a {
   width: 25rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .read-align {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+  }
 }
 
 .card-page {
@@ -97,9 +106,6 @@ header a {
 }
 
 .post-date {
-  background: #f4f4f4;
-  margin-bottom: 20px;
-  padding: 3px 10px;
 }
 
 .post-body ul,

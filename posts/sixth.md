@@ -7,6 +7,7 @@ with all the features you need for production:
  hybrid static & server rendering, TypeScript 
 support, smart bundling, route pre-fetching,
 and more. No config needed."
+tag: "Nextjs"
 cover_image: "/images/laptop.jpg"
 ---
 
