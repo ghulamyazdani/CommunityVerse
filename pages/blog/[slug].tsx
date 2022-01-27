@@ -7,23 +7,15 @@ import { marked } from "marked";
 import Link from "next/link";
 import { slugProps } from "../../types/interface";
 import Share from "../../components/Share";
+import Author from "../../components/Author";
 
 export default function Postpage({
-  frontmatter: { title, date, cover_image, author },
+  frontmatter: { title, date, cover_image },
   content,
-  slug,
+  resData,
 }: slugProps) {
-  const getAuthor = async (author: string) => {
-    const res = await fetch("https://api.github.com/users/" + author);
-    const resData = await res.json();
-    return <h1>{resData.twitter_username}</h1>;
-  };
   return (
     <>
-      <Link href="/">
-        <div className="btn btn-back">Go Back</div>
-      </Link>
-
       <div className="card-page">
         <Share />
         <div className="content-card">
@@ -31,11 +23,13 @@ export default function Postpage({
           <h1 className="post-title text-4xl align-middle text-center font-bold">
             {title}
           </h1>
+
           <div className="post-date text-center">Posted on {date}</div>
           <div className="post-body">
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
         </div>
+        <Author Data={resData} />
       </div>
     </>
   );
@@ -60,11 +54,15 @@ export async function getStaticProps({ params: { slug } }: any) {
 
   const { data: frontmatter, content }: any = matter(markDownWithMeta);
 
+  const res = await fetch("https://api.github.com/users/" + frontmatter.author);
+  const resData = await res.json();
+
   return {
     props: {
       frontmatter,
       content,
       slug,
+      resData,
     },
   };
 }
