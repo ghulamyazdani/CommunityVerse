@@ -6,31 +6,26 @@ import Link from "next/link";
 
 export default function Post({ post }: postprop) {
   return (
-    <div className="card  drop-shadow-lg flex flex-col align-middle">
-      <img src={post.frontmatter.cover_image} alt={post.frontmatter.title} />
-      <div className="date-align text-center">
-        <div className="post-date flex flex-row text-sm opacity-60">
-          {post.frontmatter.tag}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
-            <circle
-              r="60"
-              cy="97"
-              cx="497"
-              // eslint-disable-next-line react/no-unknown-property
-              stroke-width="2"
-              stroke="#E4AF4C"
-              fill="black"
-            />
-          </svg>
-          {post.frontmatter.date}
+    <Link href={`/blog/${post.slug}`}>
+      <div className="card  flex flex-col align-middle cursor-pointer hover:drop-shadow-3xl  ">
+        <div>
+          <img
+            src={post.frontmatter.cover_image}
+            alt={post.frontmatter.title}
+          />
         </div>
-      </div>
-      <h3 className="font-semibold text-2xl">{post.frontmatter.title}</h3>
-      <p className="text-sm align-middle opacity-60">
-        {post.frontmatter.excerpt}
-      </p>
-      <div className="read-align">
-        <Link href={`/blog/${post.slug}`}>
+        <div className="date-align text-center">
+          <div className="post-date flex flex-row text-sm opacity-60">
+            <div>{post.frontmatter.tag}</div>
+            <div className=" point width-sm bg-black height-sm"></div>
+            <div>{post.frontmatter.date}</div>
+          </div>
+        </div>
+        <h3 className="font-semibold text-xl mt-2">{post.frontmatter.title}</h3>
+        <p className="text-sm align-middle opacity-60 mt-2">
+          {post.frontmatter.excerpt}
+        </p>
+        <div className="read-align">
           <div className="read-b  tn flex flex-row gap-2 cursor-pointer">
             Read More
             <svg
@@ -48,8 +43,8 @@ export default function Post({ post }: postprop) {
               />
             </svg>
           </div>
-        </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

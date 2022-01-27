@@ -9,6 +9,7 @@ support, smart bundling, route pre-fetching,
 and more. No config needed."
 tag: "Nextjs"
 cover_image: "/images/laptop.jpg"
+author: "ghulamyazdani"
 ---
 
 ## heloo Started

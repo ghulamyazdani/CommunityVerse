@@ -4,6 +4,7 @@ type front = {
   excerpt: string;
   tag: string;
   cover_image: string;
+  author: string;
 };
 
 export interface postInt {

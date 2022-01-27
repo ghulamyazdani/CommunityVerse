@@ -6,12 +6,18 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
 import { slugProps } from "../../types/interface";
+import Share from "../../components/share";
 
 export default function Postpage({
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date, cover_image, author },
   content,
   slug,
 }: slugProps) {
+  const getAuthor = async (author: string) => {
+    const res = await fetch("https://api.github.com/users/" + author);
+    const resData = await res.json();
+    return <h1>{resData.twitter_username}</h1>;
+  };
   return (
     <>
       <Link href="/">
@@ -19,11 +25,16 @@ export default function Postpage({
       </Link>
 
       <div className="card-page">
-        <h1 className="post-title text-3xl align-middle ">{title}</h1>
-        <div className="post-date">Posted on {date}</div>
-        <img src={cover_image} alt="" />
-        <div className="post-body">
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+        <Share></Share>
+        <div className="content-card">
+          <img src={cover_image} alt="" />
+          <h1 className="post-title text-4xl align-middle text-center font-bold">
+            {title}
+          </h1>
+          <div className="post-date text-center">Posted on {date}</div>
+          <div className="post-body">
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          </div>
         </div>
       </div>
     </>

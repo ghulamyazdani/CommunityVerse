@@ -1,0 +1,12 @@
+.card-page {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+
+  .content-card {
+    width: 60%;
+    pre {
+      overflow: auto;
+    }
+  }
+}
