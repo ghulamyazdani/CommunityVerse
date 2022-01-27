@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
 import { slugProps } from "../../types/interface";
-import Share from "../../components/share";
+import Share from "../../components/Share";
 
 export default function Postpage({
   frontmatter: { title, date, cover_image, author },
@@ -25,7 +25,7 @@ export default function Postpage({
       </Link>
 
       <div className="card-page">
-        <Share></Share>
+        <Share />
         <div className="content-card">
           <img src={cover_image} alt="" />
           <h1 className="post-title text-4xl align-middle text-center font-bold">
