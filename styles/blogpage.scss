@@ -1,16 +1,40 @@
 .card-page {
-  img {
-    width: 100%;
-    height: 30 rem;
-  }
   padding: 15px 30px;
   display: flex;
   justify-content: center;
+  img {
+    width: 100%;
+  }
 
   .content-card {
-    width: 60%;
+    width: 50%;
     pre {
       overflow: auto;
+      background-color: black;
+      color: white;
+    }
+  }
+  .author-card {
+    img {
+      width: 5rem;
+      border-radius: 50%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .card-page {
+    display: flex;
+    flex-direction: column;
+    .share {
+      order: 2;
+      flex-direction: row;
+    }
+    .content-card {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

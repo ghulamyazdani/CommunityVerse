@@ -19,4 +19,5 @@ export interface slugProps {
   frontmatter: front;
   content: string;
   slug: string;
+  resData: [];
 }
