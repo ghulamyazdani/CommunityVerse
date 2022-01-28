@@ -8,16 +8,35 @@ import matter from "gray-matter";
 import Post from "../components/Post";
 import { postInt } from "../types/interface";
 import { sortByDate } from "../utils";
+import Link from "next/link";
 
 const Home: NextPage<any> = ({ posts }) => {
   return (
     <div>
       <Head>
-        <title>CommunitiesBlog</title>
+        <title>CommunityBlog</title>
       </Head>
-      <h1 className="">Welcome to Communities Blog</h1>
-      <p>Get the latest and best of all blogs here</p>
-      <p>Want to contribute and publish some blogs?</p>
+      <div className="text-center">
+        <h1 className="text-3xl font-extrabold">Welcome to Community Blog</h1>
+        <p className="text-lg opacity-70">
+          Get the latest and best of all Community blogs here
+        </p>
+        <p className="text-s opacity-50">
+          Want to contribute and publish some blogs?
+          <div className="border-none decoration-slice underline text-blue-400">
+            <Link href="https://github.com/ghulamyazdani/markedblogs/new/main/posts">
+              <a
+                className="text-blue-700 hover:text-blue-900"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Contribute
+              </a>
+            </Link>
+          </div>
+        </p>
+      </div>
+
       <div className="posts">
         {posts.map((post: postInt, index: number) => {
           return <Post key={index} post={post} />;

@@ -12,12 +12,13 @@ import Author from "../../components/Author";
 export default function Postpage({
   frontmatter: { title, date, cover_image },
   content,
+  slug,
   resData,
 }: slugProps) {
   return (
     <>
       <div className="card-page">
-        <Share />
+        <Share slug={slug} />
         <div className="content-card border-2">
           <img src={cover_image} alt="" />
           <div className="m-2">

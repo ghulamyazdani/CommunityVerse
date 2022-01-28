@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Author({ Data }: any) {
-  console.log(Data);
   return (
     <>
       <div className="sidebar author-card border-2 p-4 max-w-sm text-center rounded shadow-lg">
