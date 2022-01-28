@@ -13,8 +13,11 @@ const Home: NextPage<any> = ({ posts }) => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>CommunitiesBlog</title>
       </Head>
+      <h1 className="">Welcome to Communities Blog</h1>
+      <p>Get the latest and best of all blogs here</p>
+      <p>Want to contribute and publish some blogs?</p>
       <div className="posts">
         {posts.map((post: postInt, index: number) => {
           return <Post key={index} post={post} />;

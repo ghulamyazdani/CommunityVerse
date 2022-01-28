@@ -18,15 +18,17 @@ export default function Postpage({
     <>
       <div className="card-page">
         <Share />
-        <div className="content-card">
+        <div className="content-card border-2">
           <img src={cover_image} alt="" />
-          <h1 className="post-title text-4xl align-middle text-center font-bold">
-            {title}
-          </h1>
+          <div className="m-2">
+            <h1 className="post-title text-4xl align-middle text-center font-bold">
+              {title}
+            </h1>
 
-          <div className="post-date text-center">Posted on {date}</div>
-          <div className="post-body">
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            <div className="post-date text-center">Posted on {date}</div>
+            <div className="post-body">
+              <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            </div>
           </div>
         </div>
         <Author Data={resData} />

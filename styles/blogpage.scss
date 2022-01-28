@@ -1,13 +1,19 @@
 .card-page {
   padding: 15px 30px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  gap: 1rem;
   justify-content: center;
+  max-width: 1024px;
+  margin: 0px auto;
   img {
     width: 100%;
   }
 
   .content-card {
-    width: 50%;
+    width: 100%;
+    min-width: 50rem;
+
     pre {
       overflow: auto;
       background-color: black;
@@ -15,19 +21,44 @@
     }
   }
   .author-card {
+    margin: 0 auto;
+    width: 17rem;
+    svg {
+      margin: 0.288rem;
+    }
+
     img {
       width: 5rem;
       border-radius: 50%;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 1173px) {
   .card-page {
+    .author-card {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1044px) {
+  .card-page {
+    .content-card {
+      min-width: auto;
+    }
+    .author-card {
+      order: 2;
+      margin: 0 auto;
+      width: 100%;
+    }
     display: flex;
     flex-direction: column;
     .share {
-      order: 2;
+      order: 3;
       flex-direction: row;
+      margin: 0 auto;
     }
     .content-card {
       width: 100%;
