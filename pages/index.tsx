@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import Post from "../components/Post";
 import { postInt } from "../types/interface";
 import { sortByDate } from "../utils";
+import Header from "../components/Header";
 import Link from "next/link";
 
 const Home: NextPage<any> = ({ posts }) => {
@@ -16,6 +17,7 @@ const Home: NextPage<any> = ({ posts }) => {
       <Head>
         <title>CommunityBlog</title>
       </Head>
+      <Header posts={posts} />
       <div className="text-center header">
         <h1 className="text-3xl font-extrabold">Welcome to Community Blog</h1>
         <p className="text-lg opacity-70">

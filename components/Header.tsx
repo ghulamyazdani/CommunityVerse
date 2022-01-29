@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import fs from "fs";
-import path from "path";
+export default function Header({ posts }: any) {
+  const [value, setValue] = useState("something");
 
-export default function Header() {
-  const [value, setValue] = useState("");
-  console.log(value);
   return (
     <header>
       <div className="flex flex-auto justify-around items-center">
@@ -18,21 +15,32 @@ export default function Header() {
               type="text"
               placeholder="Search blogs"
               className="text-black rounded-lg w-full p-2 focus:outline-none focus:shadow-outline"
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e) => {
+                e.target.value
+                  ? setValue(e.target.value)
+                  : setValue("something");
+              }}
             />
             <div className="absolute">
-              <option value="">heloo</option>
-              <option value="">heloo</option>
-              <option value="">heloo</option>
+              {posts.map((post: any) => {
+                if (
+                  post.frontmatter.title
+                    .toLowerCase()
+                    .includes(value.toLowerCase())
+                ) {
+                  return (
+                    <a href={`/blog/` + post.slug}>
+                      <option value="" className="text-black">
+                        {post.frontmatter.title}
+                      </option>
+                    </a>
+                  );
+                }
+              })}
             </div>
           </form>
         </div>
       </div>
     </header>
   );
-}
-export async function getStaticProps() {
-  // Get all the files in posts dir
-  const files = fs.readdirSync(path.join("posts"));
-  // Get the
 }

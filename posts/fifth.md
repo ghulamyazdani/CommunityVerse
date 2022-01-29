@@ -1,5 +1,5 @@
 ---
-title: "Intro to Nextjs, How to build 
+title: "Intro helo to Nextjs, How to build 
 server side app with next"
 date: "June 4, 2020"
 excerpt: "Next.js gives you the best developer experience 
