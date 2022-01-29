@@ -7,13 +7,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  align-self: start;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
 }
-
+.header {
+  p {
+    margin: 0;
+  }
+}
 p {
   margin: 15px 0;
   line-height: 1.8;
