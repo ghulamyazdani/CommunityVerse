@@ -124,9 +124,6 @@ header a {
   margin: 10px 0;
 }
 
-.post-date {
-}
-
 .post-body ul,
 ol {
   font-size: 110%;
@@ -142,14 +139,29 @@ ol {
   line-height: 2.3;
 }
 
-@media (max-width: 500px) {
-  .posts {
-    grid-template-columns: 1fr;
+.search {
+  .results {
+    div {
+      width: 25rem;
+    }
   }
 }
 
-.Search {
-  .results {
-    width: 10rem;
+@media (max-width: 1231px) {
+  .search {
+    .results {
+      div {
+        width: 15rem;
+      }
+    }
+  }
+}
+@media (max-width: 626px) {
+  .search {
+    .results {
+      div {
+        width: 9rem;
+      }
+    }
   }
 }

@@ -21,8 +21,8 @@ export default function Header({ posts }: any) {
                   : setValue("something");
               }}
             />
-            <div className="results absolute border-2 bg-white rounded-md">
-              {posts.map((post: any) => {
+            <div className="results absolute border-2 mt-1 bg-white rounded-md">
+              {posts.map((post: any, index: number) => {
                 if (
                   post.frontmatter.title
                     .toLowerCase()
@@ -30,15 +30,16 @@ export default function Header({ posts }: any) {
                 ) {
                   return (
                     <Link href={`/blog/` + post.slug} passHref>
-                      <div className="relative p-4 text-gray-50 cursor-pointer hover:bg-slate-200 ">
+                      <div
+                        key={index}
+                        className="relative p-4 text-gray-50 cursor-pointer border-b-2 hover:bg-slate-200 "
+                      >
                         <option
                           value=""
                           className="relative text-justify  truncate text-black "
                         >
                           {post.frontmatter.title}
                         </option>
-
-                        <hr className="mt-3" />
                       </div>
                     </Link>
                   );
