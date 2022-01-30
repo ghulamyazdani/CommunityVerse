@@ -8,8 +8,10 @@ import Link from "next/link";
 import { slugProps } from "../../types/interface";
 import Share from "../../components/Share";
 import Author from "../../components/Author";
+import Header from "../../components/Header";
 
 export default function Postpage({
+  posts,
   frontmatter: { title, date, cover_image },
   content,
   slug,
@@ -17,6 +19,7 @@ export default function Postpage({
 }: slugProps) {
   return (
     <>
+      <Header posts={posts} />
       <div className="card-page">
         <Share slug={slug} />
         <div className="content-card border-2">
@@ -50,6 +53,21 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params: { slug } }: any) {
+  // Get all the files in posts dir
+  const files = fs.readdirSync(path.join("posts"));
+  // Get the content of each file for searching
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
   const markDownWithMeta = fs.readFileSync(
     path.join("posts", slug + ".md"),
     "utf8"
@@ -62,6 +80,7 @@ export async function getStaticProps({ params: { slug } }: any) {
 
   return {
     props: {
+      posts,
       frontmatter,
       content,
       slug,

@@ -16,6 +16,7 @@ export interface postprop {
 }
 
 export interface slugProps {
+  posts: [];
   frontmatter: front;
   content: string;
   slug: string;

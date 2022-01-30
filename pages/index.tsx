@@ -54,7 +54,6 @@ export async function getStaticProps() {
   // Get all the files in posts dir
   const files = fs.readdirSync(path.join("posts"));
   // Get the content of each file
-  console.log(files);
   const posts = files.map((filename) => {
     const slug = filename.replace(".md", "");
     const markdownWithMeta = fs.readFileSync(

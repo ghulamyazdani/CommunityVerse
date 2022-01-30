@@ -21,7 +21,7 @@ export default function Header({ posts }: any) {
                   : setValue("something");
               }}
             />
-            <div className="absolute">
+            <div className="results absolute border-2 bg-white rounded-md">
               {posts.map((post: any) => {
                 if (
                   post.frontmatter.title
@@ -29,11 +29,18 @@ export default function Header({ posts }: any) {
                     .includes(value.toLowerCase())
                 ) {
                   return (
-                    <a href={`/blog/` + post.slug}>
-                      <option value="" className="text-black">
-                        {post.frontmatter.title}
-                      </option>
-                    </a>
+                    <Link href={`/blog/` + post.slug} passHref>
+                      <div className="relative p-4 text-gray-50 cursor-pointer hover:bg-slate-200 ">
+                        <option
+                          value=""
+                          className="relative text-justify  truncate text-black "
+                        >
+                          {post.frontmatter.title}
+                        </option>
+
+                        <hr className="mt-3" />
+                      </div>
+                    </Link>
                   );
                 }
               })}
