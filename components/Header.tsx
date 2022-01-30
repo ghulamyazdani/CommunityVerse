@@ -21,7 +21,7 @@ export default function Header({ posts }: any) {
                   : setValue("something");
               }}
             />
-            <div className="results absolute border-2 mt-1 bg-white rounded-md">
+            <div className="results absolute border-2 mt-1 z-10 bg-white rounded-md">
               {posts.map((post: any, index: number) => {
                 if (
                   post.frontmatter.title

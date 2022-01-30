@@ -39,7 +39,7 @@ const Home: NextPage<any> = ({ posts }) => {
         </p>
       </div>
 
-      <div className="posts">
+      <div className="posts p-4">
         {posts.map((post: postInt, index: number) => {
           return <Post key={index} post={post} />;
         })}
