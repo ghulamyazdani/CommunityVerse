@@ -2,18 +2,47 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 export default function Header({ posts }: any) {
   const [value, setValue] = useState("something");
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const { systemTheme, theme, setTheme } = useTheme();
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+    const currentTheme = theme === "system" ? systemTheme : theme;
+    if (currentTheme === "dark") {
+      return (
+        <SunIcon
+          className="w-7 h-7"
+          role="button"
+          onClick={() => setTheme("light")}
+        />
+      );
+    } else {
+      return (
+        <MoonIcon
+          className="w-7 h-7"
+          role="button"
+          onClick={() => setTheme("dark")}
+        />
+      );
+    }
+  };
   return (
     <header>
-      <div className="flex flex-auto justify-around items-center">
+      <div className="flex flex-auto m-3 justify-around items-center">
         <Link href="/" passHref>
           <h2 className="cursor-pointer font-Port flex flex-row  text-3xl">
             <img className="w-56" src="/images/logo.svg"></img>
           </h2>
         </Link>
-        <div className="search">
+        <div className="search flex flex-row justify-between items-center">
           <form action="">
             <input
               type="text"
@@ -51,6 +80,7 @@ export default function Header({ posts }: any) {
               })}
             </div>
           </form>
+          {renderThemeChanger()}
         </div>
       </div>
     </header>
