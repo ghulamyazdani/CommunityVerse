@@ -27,7 +27,7 @@ export default function Post({ post }: postprop) {
         <p className="text-sm dark:text-black align-middle opacity-60 mt-2">
           {post.frontmatter.excerpt}
         </p>
-        <div className="read-align">
+        <div className="read-align dark:text-black ">
           <div className="read-b  tn flex flex-row gap-2 cursor-pointer">
             Read More
             <svg

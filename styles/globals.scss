@@ -93,6 +93,11 @@ header a {
   overflow: hidden;
   background: white;
   transition: all 0.2s ease;
+  img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+  }
   .read-align {
     text-align: center;
     width: fit-content;
