@@ -1,8 +1,9 @@
 import { DiscussionEmbed } from "disqus-react";
 const DisqusComments = ({ title, slug }: any) => {
-  const disqusShortname = "your-disqus-shortname";
+  console.log(title, slug);
+  const disqusShortname = "communityblogs";
   const disqusConfig = {
-    url: `communityblogs.disqus.com`,
+    url: `http://localhost:3000`,
     identifier: slug, // Single post id
     title: title, // Single post title
   };
@@ -13,3 +14,25 @@ const DisqusComments = ({ title, slug }: any) => {
   );
 };
 export default DisqusComments;
+// import {DiscussionEmbed} from "disqus-react"
+
+// const Comments = () => {
+//   const disqusShortname = "Demo-GfG"
+
+//   const disqusConfig = {
+//     url: "http://localhost:3000",
+//     identifier:'123',
+//     title: "Demo Post"
+//   }
+
+//   return (
+//     <div>
+//       <DiscussionEmbed
+//         shortname={disqusShortname}
+//         config={disqusConfig}
+//       />
+//     </div>
+//   )
+// }
+
+// export default Comments;

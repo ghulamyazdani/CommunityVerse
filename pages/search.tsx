@@ -49,6 +49,14 @@ const Home: NextPage<any> = ({ posts }) => {
                     </div>
                   </Link>
                 );
+              } else if (
+                post.frontmatter.author
+                  .toLowerCase()
+                  .includes(value.toLowerCase())
+              ) {
+                return (
+                  <div className="text-black">{post.frontmatter.author}</div>
+                );
               }
             })}
           </div>

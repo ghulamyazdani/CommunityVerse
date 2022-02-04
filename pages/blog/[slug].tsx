@@ -9,6 +9,7 @@ import { slugProps } from "../../types/interface";
 import Share from "../../components/Share";
 import Author from "../../components/Author";
 import Header from "../../components/Header";
+// import DisqusComments from "../../components/Disqus";
 
 export default function Postpage({
   posts,
@@ -34,6 +35,7 @@ export default function Postpage({
               <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
             </div>
           </div>
+          {/* <DisqusComments title={title} slug={slug} /> */}
         </div>
         <Author Data={resData} />
       </div>
