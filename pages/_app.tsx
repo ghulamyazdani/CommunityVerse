@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import "../styles/Home.module.scss";
 import "../styles/blogpage.scss";
+import "../styles/Likebtn.scss";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer";

@@ -9,7 +9,7 @@ import { slugProps } from "../../types/interface";
 import Share from "../../components/Share";
 import Author from "../../components/Author";
 import Header from "../../components/Header";
-
+import Likepost from "../../components/Likepost";
 export default function Postpage({
   posts,
   frontmatter: { title, date, cover_image },
@@ -35,7 +35,10 @@ export default function Postpage({
             </div>
           </div>
         </div>
-        <Author Data={resData} />
+        <div>
+          <Author Data={resData} />
+          <Likepost />
+        </div>
       </div>
     </>
   );
