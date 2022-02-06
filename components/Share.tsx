@@ -15,7 +15,7 @@ export default function share({ slug }: any): JSX.Element {
       <p className="text-center">Share this</p>
       <TwitterShareButton
         title={slug}
-        url={"/blog/" + slug}
+        url={"http://community-blog.vercel.app/blog/" + slug}
         hashtags={[slug]}
         className="Demo__some-network__share-button"
       >
@@ -23,13 +23,13 @@ export default function share({ slug }: any): JSX.Element {
       </TwitterShareButton>
       <LinkedinShareButton
         title={slug}
-        url={"/blog/" + slug}
+        url={"http://community-blog.vercel.app/blog/" + slug}
         className="Demo__some-network__share-button"
       >
         <IconLinkedin className="h-10 w-10 mx-auto m-2 hover:text-[#006192]" />
       </LinkedinShareButton>
       <FacebookShareButton
-        url={"/blog/" + slug}
+        url={"http://community-blog.vercel.app/blog/" + slug}
         quote={"フェイスブックはタイトルが付けれるようです"}
         hashtag={"#" + slug}
         className="Demo__some-network__share-button"
@@ -37,7 +37,7 @@ export default function share({ slug }: any): JSX.Element {
         <IconFacebook className="h-10 w-10 mx-auto m-2 hover:text-[#3b5998]" />
       </FacebookShareButton>
       <WhatsappShareButton
-        url={"/blog/" + slug}
+        url={"http://community-blog.vercel.app/blog/" + slug}
         className="Demo__some-network__share-button"
       >
         <IconWhatsapp className="h-10 w-10 mx-auto m-2 hover:text-[#25D366]" />
