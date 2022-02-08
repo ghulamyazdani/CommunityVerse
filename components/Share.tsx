@@ -11,7 +11,7 @@ import {
 } from "react-share";
 export default function share({ slug }: any): JSX.Element {
   return (
-    <div className="share flex flex-col mr-6 mt-16">
+    <div className="share sticky top-3 flex flex-col mr-6 mt-16">
       <p className="text-center">Share this</p>
       <TwitterShareButton
         title={slug}

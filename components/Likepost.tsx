@@ -14,14 +14,14 @@ export default function Likepost() {
   }
   return (
     <div>
-      <div className="placement  cursor-pointer">
+      <div className="placement">
         <div
           className="heart opacity-100 cursor-pointer"
           onClick={() => {
             LikeToggle();
           }}
         ></div>
-        <span>{Like}likes</span>
+        <span className="ml-[-1rem]">{Like} likes</span>
       </div>
     </div>
   );
