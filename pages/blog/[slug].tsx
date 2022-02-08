@@ -20,11 +20,11 @@ export default function Postpage({
   return (
     <>
       <Header posts={posts} />
-      <div className="card-page">
+      <div className="card-page ">
         <div className="share">
           <Share slug={slug} />
         </div>
-        <div className="content-card border-2">
+        <div className="content-card mt-20 border-2">
           <img src={cover_image} alt="" />
           <div className="m-2">
             <h1 className="post-title text-4xl align-middle text-center font-bold">
@@ -38,7 +38,7 @@ export default function Postpage({
           </div>
         </div>
         <div>
-          <div className="sticky top-2">
+          <div className="lg:sticky relative top-0 lg:top-28">
             <Author Data={resData} />
             <Likepost />
           </div>

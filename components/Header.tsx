@@ -35,7 +35,7 @@ export default function Header({ posts }: any) {
     }
   };
   return (
-    <header>
+    <header className="fixed w-full z-10">
       <div className="flex flex-auto m-3 justify-around items-center">
         <Link href="/" passHref>
           <h2 className="cursor-pointer font-Port flex flex-row  text-3xl">
