@@ -38,7 +38,7 @@ export default function Postpage({
           </div>
         </div>
         <div>
-          <div className="lg:sticky relative top-0 lg:top-28">
+          <div className="lg:sticky relative top-0 lg:top-24">
             <Author Data={resData} />
             <Likepost />
           </div>
