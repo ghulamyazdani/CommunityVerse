@@ -7,8 +7,10 @@
   justify-content: center;
   max-width: 1024px;
   margin: 0px auto;
-  img {
-    width: 100%;
+  .card-main {
+    img {
+      width: 100%;
+    }
   }
 
   .content-card {
@@ -65,9 +67,11 @@
     .content-card {
       width: 100%;
     }
-    img {
-      width: 100%;
-      height: auto;
+    .card-main {
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

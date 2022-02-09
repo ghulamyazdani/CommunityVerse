@@ -22,3 +22,8 @@ export interface slugProps {
   slug: string;
   resData: [];
 }
+export interface Related {
+  posts: [];
+  slug: string;
+  tag: string;
+}

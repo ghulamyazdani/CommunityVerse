@@ -10,9 +10,10 @@ import Share from "../../components/Share";
 import Author from "../../components/Author";
 import Header from "../../components/Header";
 import Likepost from "../../components/Likepost";
+import Relatedpost from "../../components/Relatedpost";
 export default function Postpage({
   posts,
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date, cover_image, tag },
   content,
   slug,
   resData,
@@ -24,18 +25,22 @@ export default function Postpage({
         <div className="share">
           <Share slug={slug} />
         </div>
-        <div className="content-card mt-20 border-2">
-          <img src={cover_image} alt="" />
-          <div className="m-2">
-            <h1 className="post-title text-4xl align-middle text-center font-bold">
-              {title}
-            </h1>
-
-            <div className="post-date text-center">Posted on {date}</div>
-            <div className="post-body">
-              <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+        <div className="content-card mt-20">
+          <div className="card-main border-2">
+            <img src={cover_image} alt="" />
+            <div className="m-2">
+              <h1 className="post-title text-4xl align-middle text-center font-bold">
+                {title}
+              </h1>
+              <div className="post-date text-center">Posted on {date}</div>
+              <div className="post-body">
+                <div
+                  dangerouslySetInnerHTML={{ __html: marked(content) }}
+                ></div>
+              </div>
             </div>
           </div>
+          <Relatedpost posts={posts} slug={slug} tag={tag} />
         </div>
         <div>
           <div className="lg:sticky relative top-0 lg:top-24">
