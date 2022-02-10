@@ -1,15 +1,32 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkmode: "class",
+  darkMode: "class",
+  purge: {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      safelist: ["dark"],
+    },
+  },
   theme: {
+    typography: (theme) => ({}),
     extend: {
       fontFamily: {
         Port: ["Port Lligat Sans", "sans-serif"],
       },
+      colors: {},
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: "white",
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  variants: {
+    typography: ["dark"],
+  },
+  plugins: [require("@tailwindcss/typography")],
 };

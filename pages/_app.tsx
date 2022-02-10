@@ -10,7 +10,7 @@ import "../styles/footer.scss";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider enableSystem={true} attribute="class">
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>

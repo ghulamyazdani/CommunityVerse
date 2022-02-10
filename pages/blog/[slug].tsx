@@ -20,9 +20,9 @@ export default function Postpage({
   resData,
 }: slugProps) {
   return (
-    <>
+    <div className="dark:bg-black">
       <Header posts={posts} />
-      <div className="card-page dark">
+      <div className="card-page ">
         <div className="share">
           <Share slug={slug} />
         </div>
@@ -51,7 +51,7 @@ export default function Postpage({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export async function getStaticPaths() {

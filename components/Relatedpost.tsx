@@ -33,7 +33,7 @@ export default function Relatedpost({ posts, slug, tag }: Related) {
                   src={post.frontmatter.cover_image}
                   alt=""
                 />
-                <div className="flex related-text flex-col text-black dark:text-white justify-center">
+                <div className="flex related-text flex-col text-lg justify-center">
                   <div className="text-sm opacity-60 ">
                     {post.frontmatter.date}
                   </div>

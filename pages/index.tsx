@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Home: NextPage<any> = ({ posts }) => {
   return (
-    <div>
+    <div className="dark:bg-black">
       <Head>
         <title>CommunityBlog</title>
       </Head>
