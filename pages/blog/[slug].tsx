@@ -11,6 +11,7 @@ import Author from "../../components/Author";
 import Header from "../../components/Header";
 import Likepost from "../../components/Likepost";
 import Relatedpost from "../../components/Relatedpost";
+import GetComment from "../../components/GetComment";
 export default function Postpage({
   posts,
   frontmatter: { title, date, cover_image, tag },
@@ -21,7 +22,7 @@ export default function Postpage({
   return (
     <>
       <Header posts={posts} />
-      <div className="card-page ">
+      <div className="card-page dark">
         <div className="share">
           <Share slug={slug} />
         </div>
@@ -40,6 +41,7 @@ export default function Postpage({
               </div>
             </div>
           </div>
+          <GetComment slug={slug} />
           <Relatedpost posts={posts} slug={slug} tag={tag} />
         </div>
         <div>

@@ -18,7 +18,7 @@ const Home: NextPage<any> = ({ posts }) => {
         <title>CommunityBlog</title>
       </Head>
       <Header posts={posts} />
-      <div className="text-center pt-28 header">
+      <div className="text-center pt-28 header ">
         <h1 className="text-3xl font-extrabold">Welcome to Community Blog</h1>
         <p className="text-lg opacity-70">
           Get the latest and best of all Community blogs here

@@ -7,8 +7,8 @@ cover_image: "/images/Darkmode.png"
 author: "amino19"
 ---
 
-## heloo Started
+## Dark mode with Tailwind css
 
-h1. This is the first post
-sd;j
-`sdhkjsdhkj`
+Implementing Darkmode in tailwindcss is pretty easy to be honest you just have to use some simple basic react terminologies like theme provider.
+So at First you will have to install a package , next-themes in your project will
+`npm i next-themes`
