@@ -19,7 +19,9 @@ export default function Relatedpost({ posts, slug, tag }: Related) {
   }
   return (
     <div className="border-2 dark p-4 mt-3 rounded ">
-      <h3 className="text-2xl mb-3 text-center font-bold">Related post</h3>
+      <h3 className="text-2xl mb-3 border-b text-center font-bold">
+        Related post
+      </h3>
       {posts.map((post: any, index: number) => {
         if (post.slug !== slug && check(post)) {
           return (

@@ -10,7 +10,7 @@ const DarkMode: React.FC = () => {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="bg-trueGray-200 border-none dark:bg-trueGray-800 rounded p-3 h-10 w-10"
+      className="bg-trueGray-200  border-none dark:bg-trueGray-800 rounded p-3 h-10 w-10"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {mounted && (
@@ -19,7 +19,7 @@ const DarkMode: React.FC = () => {
           viewBox="0 0 24 24"
           fill="currentColor"
           stroke="currentColor"
-          className="h-4 w-4 text-white dark:text-gray-200"
+          className="h-4 w-4 text-white bg-clip-content dark:text-gray-200"
         >
           {theme === "dark" ? (
             <path
