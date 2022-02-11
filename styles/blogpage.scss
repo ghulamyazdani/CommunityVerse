@@ -62,6 +62,20 @@
       order: 3;
       flex-direction: row;
       margin: 0 auto;
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      background: white;
+      width: 100%;
+      z-index: 1;
+      color: black;
+      gap: 2rem;
+      .share-text {
+        display: none;
+      }
     }
     .content-card {
       width: 100%;

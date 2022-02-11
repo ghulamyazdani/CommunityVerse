@@ -11,8 +11,8 @@ import {
 } from "react-share";
 export default function share({ slug }: any): JSX.Element {
   return (
-    <div className="share lg:sticky top-0 lg:top-28 relative flex flex-col mr-6 mt-16">
-      <p className="text-center">Share this</p>
+    <div className="share lg:sticky top-0 lg:top-28 relative flex flex-col mr-2 mt-16">
+      <p className="text-center share-text">Share this</p>
       <TwitterShareButton
         title={slug}
         url={"http://community-blog.vercel.app/blog/" + slug}

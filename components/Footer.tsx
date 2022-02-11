@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#4682B4] p-3">
+    <footer className="bg-[#4682B4] pb-16 lg:pb-0 p-3">
       <div className="created-by">Copyright © All rights reserved.</div>
       <div className="foot">
         <a
