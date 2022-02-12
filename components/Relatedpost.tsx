@@ -28,7 +28,7 @@ export default function Relatedpost({ posts, slug, tag }: Related) {
             <Link href={`/blog/${post.slug}`} passHref key={index}>
               <a
                 key={index}
-                className="flex ml-7 content-center ga-4 items-center flex-row cursor-pointer  hover:bg-slate-200 rounded-md"
+                className="flex ml-7 content-center ga-4 items-center flex-row cursor-pointer hover:text-black hover:bg-slate-200 rounded-md"
               >
                 <img
                   className="w-20 h-20 bg-cover border-2 object-cover rounded-full m-2"

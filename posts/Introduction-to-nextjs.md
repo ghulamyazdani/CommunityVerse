@@ -8,7 +8,7 @@ with all the features you need for production:
 support, smart bundling, route pre-fetching,
 and more. No config needed."
 tag: "Nextjs"
-cover_image: "/images/laptop.jpg"
+cover_image: "/images/nextjs.jpg"
 author: "ghulamyazdani"
 ---
 
