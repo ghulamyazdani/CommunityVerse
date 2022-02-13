@@ -29,6 +29,7 @@ export default function GetComment({ slug }: any) {
         ...prevState,
         [target.name]: target.checked,
       }));
+      console.log(formData);
     } else {
       setFormData((prevState: any) => ({
         ...prevState,
@@ -66,7 +67,7 @@ export default function GetComment({ slug }: any) {
           formData.email = "";
         }
         formData.comment = "";
-        setFormData((prevState) => ({
+        setFormData((prevState: any) => ({
           ...prevState,
           ...formData,
         }));
@@ -83,27 +84,33 @@ export default function GetComment({ slug }: any) {
         Share Your Review
       </h1>
       <textarea
+        value={formData.comment}
         placeholder="Comment"
+        name="comment"
         onChange={onInputChange}
         className="p-4 mt-3 outline-none w-full bg-slate-100 rounded-lg h-36 focus:ring-2 focus:ring-gray-200  text-gray-700"
       ></textarea>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 text-gray-700">
         <input
+          value={formData.name}
           placeholder="Name"
           onChange={onInputChange}
           type="text"
           className="py-2 px-4 outline-none w-full rounded-lg bg-slate-100 "
         />
         <input
+          value={formData.email}
           placeholder="Email"
           onChange={onInputChange}
           type="email"
           className="py-2 px-4 outline-none w-full rounded-lg bg-slate-100"
+          name="email"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <div>
           <input
+            checked={formData.storeData}
             type="checkbox"
             onChange={onInputChange}
             id="storeData"
