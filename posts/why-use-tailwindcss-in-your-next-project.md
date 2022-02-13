@@ -24,7 +24,8 @@ The main difference between TailwindCSS and Bootstrap is that Tailwind CSS is no
 
 Bootstrap is known for its responsiveness, whereas proponents of Tailwind CSS typically value the framework’s customizability. The best choice for you depends on your priorities and project requirements, but let’s talk about why Tailwind CSS is quickly gaining popularity and more widespread use.
 
-How to ue tailwind css ?
+## How to ue tailwind css ?
+
 Firstly you will have to install tailwind package and create your tailwind.config.js file in your prject by the following commands
 
 ```

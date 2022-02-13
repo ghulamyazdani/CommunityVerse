@@ -12,8 +12,12 @@
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "disqus-react": "^1.1.2",
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.0.0",
     "gray-matter": "^4.0.3",
+    "html-react-parser": "^1.4.8",
     "marked": "^4.0.0",
+    "moment": "^2.29.1",
     "next": "12.0.8",
     "next-themes": "^0.0.15",
     "node-sass": "^6.0.1",

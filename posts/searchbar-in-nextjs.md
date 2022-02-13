@@ -14,13 +14,14 @@ First you would need a project in which you are trying to add searchbar in my ca
 starting from the step 1.
 you will need to create a new component searchbar.tsx.In which you will need to create some html tags which will be use for searchbar
 
-```<form action="">
+```
+<form action="">
             <input
               type="text"
               placeholder="Search blogs"
               className="text-black rounded-lg w-full p-2 focus:outline-none focus:shadow-outline"
             />
-          </form>
+</form>
 ```
 
 Now you will have to use Usestate hook to store input values in it and then we will have to search that particular input in the array of data which we are getting from api.
@@ -39,16 +40,13 @@ Now comes the main part of whole thing . we will be searching the value in our w
 
 ```
 <div className="results overflow-hidden mt-1 z-10 bg-white rounded-lg">
-            {posts.map((post: any, index: number) => {
-              if (
-                post.frontmatter.title
-                  .toLowerCase()
-                  .includes(value.toLowerCase())
-              ) {
-                return (
-                  <Link href={`/blog/` + post.slug} passHref>
-                    <div
-                      key={index}
+  {posts.map((post: any, index: number) => {
+    if (post.frontmatter.title
+         .toLowerCase()
+         .includes(value.toLowerCase())) {
+            return (
+            <Link href={`/blog/` + post.slug} passHref>
+            <div key={index}
                       className="relative p-4 border-2 text-gray-50 cursor-pointer hover:bg-slate-200 "
                     >
                       <option
@@ -67,9 +65,8 @@ Now comes the main part of whole thing . we will be searching the value in our w
               ) {
                 return (
                   <div className="text-black">{post.frontmatter.author}</div>
-                );
-              }
-            })}
-          </div>
+               );}
+   })}
+</div>
 
 ```
