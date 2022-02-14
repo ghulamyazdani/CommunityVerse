@@ -20,7 +20,7 @@ export default function Postpage({
   resData,
 }: slugProps) {
   return (
-    <div className="dark:bg-black">
+    <div className=" dark:bg-[#061621]">
       <Header posts={posts} />
       <div className="card-page ">
         <div className="share">
