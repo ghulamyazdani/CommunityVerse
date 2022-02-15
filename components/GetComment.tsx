@@ -18,7 +18,6 @@ export default function GetComment({ slug }: any) {
                         try {
                             submitComment({ slug, name, email, comment })
                             setStatus(true)
-                            setTimeout(setStatus(false), 2000)
                         } catch (error) {
                             console.log(error)
                         }
