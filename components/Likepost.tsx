@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { getLike } from '../services/index'
+import { getLike, putLikes } from '../services/index'
 export default function Likepost({ slug }: { slug: string }) {
     const [Like, setLike] = useState(0)
     useEffect(() => {
         getLike(slug).then(res => {
             setLike(res)
         })
+        if (window.localStorage.getItem('Liked') === 'true') {
+            const heartBtn: any = document.querySelector('.heart')
+            heartBtn.classList.add('is-active')
+        }
     }, [slug])
     function LikeToggle() {
         const heartBtn: any = document.querySelector('.heart')
         if (heartBtn.classList.contains('is-active')) {
-            heartBtn.classList.toggle('is-active')
-            setLike(Like ? Like - 1 : 0)
+            heartBtn.classList.add('is-active')
         } else {
-            heartBtn.classList.toggle('is-active')
-            console.log('clicking')
-            setLike(Like ? Like + 1 : 1)
+            heartBtn.classList.add('is-active')
+
+            if (window.localStorage.getItem('Liked') !== 'true') {
+                putLikes({ slug: slug, likes: Like + 1 })
+                getLike(slug).then(res => {
+                    setLike(res)
+                })
+            }
+            window.localStorage.setItem('Liked', 'true')
         }
     }
     return (
