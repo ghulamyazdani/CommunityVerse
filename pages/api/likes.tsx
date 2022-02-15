@@ -7,10 +7,10 @@ export default async function handler(req: any, res: any) {
         const db = client.db()
         const yourCollection = db.collection('Likes')
         const result = await yourCollection.insertOne(data)
-        console.log(result)
         client.close()
         res.status(201).json({ message: 'Data inserted successfully!' })
     } else if (req.method === 'GET') {
+        // const data = req.query
         const client = await MongoClient.connect(uri)
         const db = client.db()
         const yourCollection = db.collection('Likes')
@@ -23,9 +23,10 @@ export default async function handler(req: any, res: any) {
         const db = client.db()
         const yourCollection = db.collection('Likes')
         const result = await yourCollection.updateOne(
-            { _id: data._id },
-            { $set: data },
+            { slug: data.slug },
+            { $set: { likes: data.likes } },
         )
+        console.log(result)
         client.close()
         res.status(200).json({ message: 'Data updated successfully? ' })
     }
