@@ -4,7 +4,7 @@ export default function GetComment({ slug }: any) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comment, setcomment] = useState('')
-    const [status, setStatus] = useState(false)
+    const [status, setStatus]: any = useState(false)
 
     return (
         <div className="border-2 mt-3 px-9 text-center">
@@ -17,9 +17,8 @@ export default function GetComment({ slug }: any) {
                     if (name && comment && email) {
                         try {
                             submitComment({ slug, name, email, comment })
-                            setTimeout(() => {
-                                setStatus(true)
-                            }, 3000)
+                            setStatus(true)
+                            setTimeout(setStatus(false), 2000)
                         } catch (error) {
                             console.log(error)
                         }
@@ -70,17 +69,16 @@ export default function GetComment({ slug }: any) {
                         </label>
                     </div>
                 </div>
-                {/* {error && (
-        <p className="text-xs text-red-500">All fields are mandatory</p>
-      )} */}
-                <button className="bg-[steelblue] text-center items-center hover:bg-[#3d6c92] text-white font-bold py-2 px-4 rounded-full mb-5">
-                    Submit
-                </button>
-                {status && (
-                    <span className="text-xl float-right font-semibold mt-3 text-green-500">
-                        Comment submitted for review
-                    </span>
-                )}
+                <div className="flex flex-col align-center justify-content items-center">
+                    {status && (
+                        <span className="text-xs font-semibold text-green-500">
+                            Comment submitted successfully
+                        </span>
+                    )}
+                    <button className="bg-[steelblue] text-center items-center hover:bg-[#3d6c92] text-white font-bold py-2 px-4 rounded-full mb-5">
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
     )
