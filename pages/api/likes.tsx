@@ -5,7 +5,7 @@ export default async function handler(req: any, res: any) {
         const data = req.body
         const client = await MongoClient.connect(uri)
         const db = client.db()
-        const yourCollection = db.collection('Comments')
+        const yourCollection = db.collection('Likes')
         const result = await yourCollection.insertOne(data)
         console.log(result)
         client.close()
@@ -13,7 +13,7 @@ export default async function handler(req: any, res: any) {
     } else if (req.method === 'GET') {
         const client = await MongoClient.connect(uri)
         const db = client.db()
-        const yourCollection = db.collection('Comments')
+        const yourCollection = db.collection('Likes')
         const result = await yourCollection.find({}).toArray()
         client.close()
         res.status(200).json(result)
@@ -21,7 +21,7 @@ export default async function handler(req: any, res: any) {
         const data = req.body
         const client = await MongoClient.connect(uri)
         const db = client.db()
-        const yourCollection = db.collection('Comments')
+        const yourCollection = db.collection('Likes')
         const result = await yourCollection.updateOne(
             { _id: data._id },
             { $set: data },
