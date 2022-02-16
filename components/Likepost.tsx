@@ -6,7 +6,7 @@ export default function Likepost({ slug }: { slug: string }) {
         getLike(slug).then(res => {
             setLike(res)
         })
-        if (window.localStorage.getItem('Liked') === 'true') {
+        if (window.localStorage.getItem(slug) === 'true') {
             const heartBtn: any = document.querySelector('.heart')
             heartBtn.classList.add('is-active')
         }
@@ -18,13 +18,13 @@ export default function Likepost({ slug }: { slug: string }) {
         } else {
             heartBtn.classList.add('is-active')
 
-            if (window.localStorage.getItem('Liked') !== 'true') {
+            if (window.localStorage.getItem(slug) !== 'true') {
                 putLikes({ slug: slug, likes: Like + 1 })
                 getLike(slug).then(res => {
                     setLike(res)
                 })
             }
-            window.localStorage.setItem('Liked', 'true')
+            window.localStorage.setItem(slug, 'true')
         }
     }
     return (
