@@ -1,0 +1,55 @@
+.bg{
+    img{
+        width: 13rem;
+        height: 10rem;
+       object-fit: contain;
+       
+    }
+    .next{
+      
+        position: absolute;
+        top: 13vh;
+        left: 15%;
+        -webkit-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+
+        opacity: .3;
+       }
+       .sass{
+        position: absolute;
+        top: 25vh;
+        left: 42%;
+        -webkit-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+
+        opacity: .3; 
+       }
+       .node{
+        position: absolute;
+        top: 17vh;
+        left: 65%;
+        -webkit-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+
+        opacity: .3;
+       }
+       .react{
+     
+        position: absolute;
+        top: 15vh;
+        right: 5%;
+        -webkit-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+        width: 150px;
+        height: 150px;
+        opacity: .3;
+       }
+}

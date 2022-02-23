@@ -14,6 +14,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 Port: ['Port Lligat Sans', 'sans-serif'],
+                Ropa: ['Ropa Sans', 'sans-serif'],
             },
             colors: {},
             typography: theme => ({
