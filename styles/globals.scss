@@ -25,10 +25,9 @@ p {
 }
 
 header {
-  background: steelblue;
   color: #fff;
   padding: 5px;
-  margin-bottom: 40px;
+  position: absolute;
 }
 
 header a {
@@ -44,7 +43,6 @@ header a {
 
 .btn {
   display: inline-block;
-  background: steelblue;
   color: #fff;
   border: none;
   padding: 8px 16px;

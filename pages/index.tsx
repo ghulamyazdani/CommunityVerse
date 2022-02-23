@@ -13,7 +13,7 @@ import Header from '../components/Header'
 
 const Home: NextPage<any> = ({ posts }) => {
     return (
-        <div className="dark:bg-[#061621]">
+        <div className="dark:bg-[#0E1A38]">
             <Head>
                 <title>CommunityBlog</title>
             </Head>
