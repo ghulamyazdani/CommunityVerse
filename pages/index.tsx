@@ -15,14 +15,17 @@ const Home: NextPage<any> = ({ posts }) => {
     return (
         <div className="dark:bg-[#0E1A38]">
             <Head>
-                <title>CommunityBlog</title>
+                <title>Communityverse</title>
             </Head>
             <Header posts={posts} />
             <Main />
-            <div className="posts pb-10 p-4">
-                {posts.map((post: postInt, index: number) => {
-                    return <Post key={index} post={post} />
-                })}
+            <div className="px-0 lg:px-20">
+                <h1 className="text-center text-3xl">Read and Learn</h1>
+                <div className="posts pb-10 p-4">
+                    {posts.map((post: postInt, index: number) => {
+                        return <Post key={index} post={post} />
+                    })}
+                </div>
             </div>
         </div>
     )

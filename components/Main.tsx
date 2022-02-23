@@ -46,7 +46,7 @@ export default function Main() {
                     New Era Platform For Community Based Learning .
                 </h1>
                 <p className="text-lg opacity-70">
-                    Brigding gap between mentors and students.
+                    Bridging gap between mentors and students.
                 </p>
                 <div className="arrow"></div>
             </div>

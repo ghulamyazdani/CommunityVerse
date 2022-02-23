@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import Darkmode from './Darkmode'
 import Search from './Search'
 import { BiSearchAlt } from 'react-icons/bi'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaDiscord } from 'react-icons/fa'
 import Logo from './Icons/Logo'
 import IconSearch from './Icons/Search'
 
@@ -27,6 +27,7 @@ export default function Header({ posts }: any) {
                 <div className="search flex gap-5 flex-row justify-between text-black items-center dark:text-white">
                     {/* <Search posts={posts} /> */}
                     <BiSearchAlt className="h-7 w-7" />
+                    <FaDiscord className="h-6 w-6" />
                     <FaGithub className="h-6 w-6" />
                     <Darkmode />
                 </div>
