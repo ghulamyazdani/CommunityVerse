@@ -1,36 +1,31 @@
 import React from 'react'
-
+import Logo from './Icons/Logo'
 const Footer = () => {
     return (
-        <footer className="bg-[#4682B4] pb-16 lg:pb-0 p-3">
-            <div className="created-by">Copyright © All rights reserved.</div>
-            <div className="foot">
-                <a
-                    href="https://github.com/ghulamyazdani/CommunityBlog/blob/main/README.md"
-                    target="blank"
-                >
-                    <span>About</span>
-                </a>
-                <a
-                    href="https://github.com/ghulamyazdani/CommunityBlog"
-                    target="blank"
-                >
-                    <span>Source</span>
-                </a>
-                <a
-                    href="https://github.com/ghulamyazdani/CommunityBlog/blob/master/LICENSE"
-                    target="blank"
-                >
-                    <span>Licence</span>
-                </a>
-            </div>
-            <div className="created-by">
-                created by{' '}
-                <a href="https://twitter.com/iamyazreza" target="blank">
-                    <b>@ghulamyazdani</b>
-                </a>
-            </div>
-        </footer>
+        <>
+            <footer className="backdrop-opacity-10 dark:backdrop-opacity-70 backdrop-invert  dark:bg-[#000000] bg-white/30 pb-16 lg:pb-0 p-10  pt-4">
+                <div className="flex flex-row justify-around flex-wrap">
+                    <Logo />
+                    <div className="flex flex-row gap-7 my-4 flex-wrap">
+                        <ul>
+                            <li>Roadmaps</li>
+                            <li>Authors</li>
+                            <li>Top Blogs</li>
+                            <li>Mentors</li>
+                            <li>About</li>
+                        </ul>
+                        <ul>
+                            <li>Contribute</li>
+                            <li>Tags</li>
+                            <li>Faq</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="created-by">
+                    Copyright © All rights reserved.
+                </div>
+            </footer>
+        </>
     )
 }
 export default Footer

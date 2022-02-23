@@ -19,7 +19,7 @@ const Home: NextPage<any> = ({ posts }) => {
             </Head>
             <Header posts={posts} />
             <Main />
-            <div className="posts p-4">
+            <div className="posts pb-10 p-4">
                 {posts.map((post: postInt, index: number) => {
                     return <Post key={index} post={post} />
                 })}
