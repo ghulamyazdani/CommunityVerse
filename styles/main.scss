@@ -48,8 +48,6 @@
         -moz-transform: translate(-50%);
         -ms-transform: translate(-50%);
         transform: translate(-50%);
-        width: 150px;
-        height: 150px;
         opacity: .3;
        }
        .python{
@@ -61,8 +59,7 @@
         -moz-transform: translate(-50%);
         -ms-transform: translate(-50%);
         transform: translate(-50%);
-        width: 150px;
-        height: 150px;
+
         opacity: .3;
        }
        .tailwind{
@@ -73,8 +70,7 @@
         -moz-transform: translate(-50%);
         -ms-transform: translate(-50%);
         transform: translate(-50%);
-        width: 150px;
-        height: 150px;
+
         opacity: .3;
     
        }
@@ -87,8 +83,7 @@
         -moz-transform: translate(-50%);
         -ms-transform: translate(-50%);
         transform: translate(-50%);
-        width: 150px;
-        height: 150px;
+
         opacity: .3;
     
        }
@@ -130,3 +125,47 @@
            max-width: unset;
        }
    }
+
+   @media (max-width: 1231px) {
+    .bg{
+        img{
+            width: 8rem;
+            height: 8rem;
+           object-fit: contain;
+           
+        }
+    }
+  }
+  @media (max-width: 626px) {
+    .bg{
+        img{
+            width: 5rem;
+            height: 5rem;
+           object-fit: contain;
+           
+        }
+        .react{
+           
+            top: 15vh;
+            right: 6%;
+
+        }
+        .sass{
+            top: 32vh;
+            left: 46%;
+        }
+        .node{
+            display: none;
+            top: 22vh;
+            left: 60%;
+        }
+        .tailwind{
+                top: 59vh;
+    left: 45%;
+        }
+        .next{
+            top: 17vh;
+            left: 16%;
+        }
+    }
+  }
