@@ -14,7 +14,7 @@ export default function Header({ posts }: any) {
         <header className=" w-full z-10">
             <nav className="flex flex-auto m-3 justify-around items-center">
                 <Link href="/" passHref>
-                    <h2 className="cursor-pointer font-Port flex flex-row  text-3xl">
+                    <h2 className="cursor-pointer w-48 mt-[-0.5rem] font-Port flex flex-row  text-3xl">
                         <svg
                             width="237"
                             height="48"

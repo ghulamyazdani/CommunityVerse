@@ -42,26 +42,13 @@ export default function Main() {
                 />
             </section>
             <div className="main-content">
-                <h1 className="text-3xl font-extrabold">
-                    Welcome to Community Blog
+                <h1 className="text-4xl mt-[-8rem] font-extrabold">
+                    New Era Platform For Community Based Learning .
                 </h1>
                 <p className="text-lg opacity-70">
-                    Get the latest and best of all Community blogs here
+                    Brigding gap between mentors and students.
                 </p>
-                <p className="text-s opacity-50">
-                    Want to contribute and publish some blogs?
-                    <div className="border-none decoration-slice underline text-blue-400">
-                        <Link href="https://github.com/ghulamyazdani/markedblogs/new/main/posts">
-                            <a
-                                className="text-blue-700 hover:text-blue-900"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Contribute
-                            </a>
-                        </Link>
-                    </div>
-                </p>
+                <div className="arrow"></div>
             </div>
 
             <div className="curve text-white dark:text-[#0E1A38]">
