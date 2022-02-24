@@ -10,16 +10,18 @@ import { postInt } from '../types/interface'
 import { sortByDate } from '../utils'
 import Main from '../components/Main'
 import Header from '../components/Header'
+import Techs from '../components/Techs'
 
 const Home: NextPage<any> = ({ posts }) => {
     return (
-        <div className="dark:bg-[#0E1A38]">
+        <div className="dark:bg-[#0E1A38] transition-transform">
             <Head>
                 <title>Communityverse</title>
             </Head>
             <Header posts={posts} />
             <Main />
-            <div className="px-0 lg:px-20">
+            <Techs />
+            <div id="articles" className="px-0 lg:px-20">
                 <h1 className="text-center text-3xl">Read and Learn</h1>
                 <div className="posts pb-10 p-4">
                     {posts.map((post: postInt, index: number) => {
