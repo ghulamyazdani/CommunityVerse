@@ -20,8 +20,9 @@ export default function Postpage({
     resData,
 }: slugProps) {
     return (
-        <div className=" dark:bg-[#061621]">
-            <Header posts={posts} />
+        <div className=" dark:bg-[#0E1A38] transition-transform">
+            <Header posts={posts} pos={true} />
+
             <div className="card-page ">
                 <div className="share">
                     <Share slug={slug} />

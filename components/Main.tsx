@@ -42,7 +42,7 @@ export default function Main() {
                 />
             </section>
             <div className="main-content">
-                <h1 className="text-4xl mt-[-8rem] font-extrabold">
+                <h1 className="text-4xl mt-[-8rem] font-extrabold opacity-80">
                     New Era Platform For Community Based Learning .
                 </h1>
                 <p className="text-lg opacity-70">
