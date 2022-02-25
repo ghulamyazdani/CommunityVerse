@@ -3,7 +3,7 @@ import Logo from './Icons/Logo'
 const Footer = () => {
     return (
         <>
-            <footer className="backdrop-opacity-10 dark:backdrop-opacity-70 backdrop-invert  dark:bg-[#000000] bg-white/30 pb-16 lg:pb-0 p-10  pt-4">
+            <footer className="backdrop-opacity-10 dark:backdrop-opacity-70 backdrop-invert  dark:bg-[#000000] bg-[#F7F7F7] pb-16 lg:pb-0 p-10  pt-4">
                 <div className="flex flex-row justify-around flex-wrap mb-10">
                     <Logo />
                     <div className="flex flex-row gap-7 my-4 flex-wrap">

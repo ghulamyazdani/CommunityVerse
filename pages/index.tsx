@@ -11,6 +11,7 @@ import { sortByDate } from '../utils'
 import Main from '../components/Main'
 import Header from '../components/Header'
 import Techs from '../components/Techs'
+import Mentors from '../components/Mentors'
 
 const Home: NextPage<any> = ({ posts }) => {
     return (
@@ -21,6 +22,7 @@ const Home: NextPage<any> = ({ posts }) => {
             <Header posts={posts} />
             <Main />
             <Techs />
+            <Mentors />
             <div id="articles" className="px-0 lg:px-20">
                 <h1 className="text-center text-3xl">Read and Learn</h1>
                 <div className="posts pb-10 p-4">

@@ -14,7 +14,7 @@ export default function Header({ posts, pos }: any) {
         <header
             className={
                 pos
-                    ? 'w-full z-10 fixed  dark:backdrop-opacity-70 backdrop-invert  dark:bg-[#000000] bg-[#EEEEEE] shadow-md'
+                    ? 'w-full z-10 fixed  dark:backdrop-opacity-70 backdrop-invert  dark:bg-[#000000] bg-[#F7F7F7] shadow-md'
                     : ' w-full z-10'
             }
         >
