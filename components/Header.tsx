@@ -37,7 +37,7 @@ export default function Header({ posts, pos }: any) {
                 <div className="search  flex gap-5 flex-row justify-between text-black items-center dark:text-white">
                     {/* <Search posts={posts} /> */}
                     <BiSearchAlt className="h-7 w-7 cursor-pointer" />
-                    <Link href="https://www.coffeeclass.io/" passHref>
+                    <Link href="" passHref>
                         <FaDiscord className="h-6 w-6  cursor-pointer" />
                     </Link>
                     <Link href="../" passHref>

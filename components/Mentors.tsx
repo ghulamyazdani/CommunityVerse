@@ -24,7 +24,7 @@ export default function Mentors() {
                         src="https://avatars.githubusercontent.com/u/72148261?v=4"
                         alt=""
                     />
-                    <span className="text-2xl">Harsha Sumanchandra</span>
+                    <span className="text-xl">Harsha Sumanchandra</span>
                     <span className="text-sm opacity-60">
                         Backend Developer
                     </span>
@@ -35,7 +35,7 @@ export default function Mentors() {
                         src="https://avatars.githubusercontent.com/u/75872316?v=4"
                         alt=""
                     />
-                    <span className="text-2xl">Anshumaan Kumar Prasad</span>
+                    <span className="text-xl">Anshumaan Kr Prasad</span>
                     <span className="text-sm opacity-60">
                         Opensource Contributor
                     </span>
