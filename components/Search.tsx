@@ -1,14 +1,20 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-export default function Search({ posts }: any) {
+export default function Search({ posts, active }: any) {
     const [value, setValue] = useState('something')
     return (
-        <div>
+        <div
+            className={
+                active
+                    ? 'search absolute z-50 right-[10%] top-20'
+                    : 'search hidden z-50 right-[10%] top-20'
+            }
+        >
             <form action="">
                 <input
                     type="text"
                     placeholder="Search blogs"
-                    className="text-black rounded-lg w-full p-2 focus:outline-none focus:shadow-outline"
+                    className="text-black rounded-lg  p-2 focus:outline-none focus:shadow-outline"
                     onChange={e => {
                         e.target.value
                             ? setValue(e.target.value)
