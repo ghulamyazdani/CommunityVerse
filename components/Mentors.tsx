@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import { IoIosAddCircle } from 'react-icons/io'
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
 export default function Mentors() {
     return (
@@ -40,7 +42,17 @@ export default function Mentors() {
                         Opensource Contributor
                     </span>
                 </div>
+                <div className="flex flex-col align-center justify-center text-center items-center w-60 ">
+                    <IoIosAddCircle className="w-20 h-20 opacity-60" />
+                    <span className="text-m opacity-60">
+                        Add Yourself as a mentors
+                    </span>
+                </div>
             </div>
+            <p className="text-center text-md my-16 flex flex-row justify-center items-center gap-3">
+                View All Mentors
+                <HiOutlineArrowNarrowRight className="w-6 h-6" />
+            </p>
         </>
     )
 }

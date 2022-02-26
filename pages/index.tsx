@@ -5,7 +5,7 @@ import '../styles/Home.module.scss'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Post from '../components/Post'
+import MainPosts from '../components/MainPosts'
 import { postInt } from '../types/interface'
 import { sortByDate } from '../utils'
 import Main from '../components/Main'
@@ -27,7 +27,7 @@ const Home: NextPage<any> = ({ posts }) => {
                 <h1 className="text-center text-3xl">Read and Learn</h1>
                 <div className="posts pb-10 p-4">
                     {posts.map((post: postInt, index: number) => {
-                        return <Post key={index} post={post} />
+                        return <MainPosts key={index} post={post} />
                     })}
                 </div>
             </div>

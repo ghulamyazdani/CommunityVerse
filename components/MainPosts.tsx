@@ -5,7 +5,7 @@ import { postprop } from '../types/interface'
 import Link from 'next/link'
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
-export default function Post({ post }: postprop) {
+export default function MainPosts({ post }: postprop) {
     return (
         <Link href={`/blog/${post.slug}`}>
             <div className="card dark: flex flex-col align-middle cursor-pointer hover:drop-shadow-3xl  ">
@@ -30,8 +30,7 @@ export default function Post({ post }: postprop) {
                 </p>
                 <div className="read-align dark:text-black ">
                     <div className="read-b  tn flex flex-row gap-2 cursor-pointer">
-                        Read More
-                        <HiOutlineArrowNarrowRight className="w-6 h-6" />
+                        Read More <HiOutlineArrowNarrowRight />
                     </div>
                 </div>
             </div>
