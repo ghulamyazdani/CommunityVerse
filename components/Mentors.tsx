@@ -49,9 +49,9 @@ export default function Mentors() {
                     </span>
                 </div>
             </div>
-            <p className="text-center text-md my-16 flex flex-row justify-center items-center gap-3">
+            <p className="post link--arrowed items-end cursor-pointer text-center text-md my-16 flex flex-row justify-center  gap-3">
                 View All Mentors
-                <HiOutlineArrowNarrowRight className="w-6 h-6" />
+                <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
             </p>
         </>
     )

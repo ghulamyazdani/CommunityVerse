@@ -26,10 +26,10 @@ export default function Header({ posts, pos }: any) {
                 </Link>
                 <ul className="dark:text-white hidden  text-black lg:flex flex-row gap-8">
                     <li>
-                        <Link href="../">Home</Link>
+                        <Link href="/">Home</Link>
                     </li>
                     <li>
-                        <Link href="./#articles">Articles</Link>
+                        <Link href="/#articles">Articles</Link>
                     </li>
                     <li>Top Blogs</li>
                     <li>About</li>

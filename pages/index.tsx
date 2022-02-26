@@ -12,6 +12,7 @@ import Main from '../components/Main'
 import Header from '../components/Header'
 import Techs from '../components/Techs'
 import Mentors from '../components/Mentors'
+import Testimonials from '../components/Testimonials'
 
 const Home: NextPage<any> = ({ posts }) => {
     return (
@@ -23,14 +24,21 @@ const Home: NextPage<any> = ({ posts }) => {
             <Main />
             <Techs />
             <Mentors />
-            <div id="articles" className="px-0 lg:px-20">
-                <h1 className="text-center text-3xl">Read and Learn</h1>
+
+            <div
+                id="articles"
+                className="px-0 backdrop-opacity-10 dark:backdrop-opacity-70 backdrop-invert dark:bg-[#000000] bg-white/30 lg:px-20"
+            >
+                <h1 className="text-center text-4xl pt-4">Read and Learn</h1>
                 <div className="posts pb-10 p-4">
                     {posts.map((post: postInt, index: number) => {
-                        return <MainPosts key={index} post={post} />
+                        if (index <= 3) {
+                            return <MainPosts key={index} post={post} />
+                        }
                     })}
                 </div>
             </div>
+            <Testimonials />
         </div>
     )
 }
