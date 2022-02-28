@@ -3,9 +3,13 @@ import { Fragment, useState } from 'react'
 import { IoIosAddCircle } from 'react-icons/io'
 const input = `shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`
 export default function Modal() {
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('')
+    const [Twitter, setTwitter] = useState('')
+    const [Github, setGithub] = useState('')
+    const [Linkedin, setLinkedin] = useState('')
+    const [Stack, setStack] = useState('')
     function closeModal() {
         setIsOpen(false)
     }
