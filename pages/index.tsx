@@ -13,6 +13,9 @@ import Header from '../components/Header'
 import Techs from '../components/Techs'
 import Mentors from '../components/Mentors'
 import Testimonials from '../components/Testimonials'
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+
+// import ToTop from '../components/use/ToTop'
 
 const Home: NextPage<any> = ({ posts }) => {
     return (
@@ -37,8 +40,13 @@ const Home: NextPage<any> = ({ posts }) => {
                         }
                     })}
                 </div>
+                <div className="post link--arrowed items-end cursor-pointer text-center text-md  flex flex-row justify-center  gap-3">
+                    View All Articles
+                    <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
+                </div>
             </div>
             <Testimonials />
+            {/* <ToTop /> */}
         </div>
     )
 }
