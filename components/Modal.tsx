@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { IoIosAddCircle } from 'react-icons/io'
+import { postMentors } from '../services/index'
 const input = `shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`
 export default function Modal() {
     let [isOpen, setIsOpen] = useState(false)
@@ -10,6 +11,7 @@ export default function Modal() {
     const [Twitter, setTwitter] = useState('')
     const [Github, setGithub] = useState('')
     const [Linkedin, setLinkedin] = useState('')
+    const [Bio, setBio] = useState('')
     const [Error, setError] = useState('')
     function toinitials() {
         setName('')
@@ -18,9 +20,9 @@ export default function Modal() {
         setTwitter('')
         setGithub('')
         setLinkedin('')
+        setBio('')
         setError('')
     }
-
     function closeModal() {
         setIsOpen(false)
         setError('')
@@ -31,18 +33,27 @@ export default function Modal() {
     }
 
     function handleSubmit() {
-        console.log(Name, Email, Occup, Twitter, Github, Linkedin)
+        postMentors({
+            name: Name,
+            email: Email,
+            occupation: Occup,
+            bio: Bio,
+            twitter: Twitter,
+            github: Github,
+            linkedin: Linkedin,
+            status: 'Not Verified',
+        })
     }
     function message() {
         if (Error === 'false') {
             return (
-                <span className="text-xs font-semibold text-green-500">
-                    submitted successfully
+                <span className="text-xs font-semibold text-center text-green-500">
+                    We got your submission
                 </span>
             )
         } else if (Error === 'error') {
             return (
-                <span className="text-xs font-semibold absolute text-red-500">
+                <span className="text-xs font-semibold absolute text-center text-red-500">
                     There was some error
                 </span>
             )
@@ -121,7 +132,8 @@ export default function Modal() {
                                                 Occup &&
                                                 Twitter &&
                                                 Github &&
-                                                Linkedin
+                                                Linkedin &&
+                                                Bio
                                             ) {
                                                 try {
                                                     handleSubmit()
@@ -164,6 +176,13 @@ export default function Modal() {
                                                 setOccup(e.target.value)
                                             }}
                                         />
+                                        <label htmlFor="Email">Bio</label>
+                                        <textarea
+                                            className={input}
+                                            onChange={e => {
+                                                setBio(e.target.value)
+                                            }}
+                                        />
                                         <h1 className="text-lg font-bold">
                                             Socials
                                         </h1>
@@ -198,13 +217,13 @@ export default function Modal() {
                                         <button className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                                             Submit
                                         </button>
-                                        <button
-                                            className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                                            onClick={closeModal}
-                                        >
-                                            Close
-                                        </button>
                                     </form>
+                                    <button
+                                        className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium w-full text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                                        onClick={closeModal}
+                                    >
+                                        Close
+                                    </button>
                                 </div>
                             </div>
                         </Transition.Child>
