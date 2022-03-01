@@ -6,7 +6,6 @@ export default function Mentors() {
     return (
         <>
             <h1 className="text-center text-4xl mb-4">Mentors</h1>
-
             <div className="flex flex-row gap-20 flex-wrap justify-center my-10">
                 <div className="flex flex-col align-center justify-center text-center items-center w-60 ">
                     <img

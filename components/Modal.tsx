@@ -6,18 +6,54 @@ export default function Modal() {
     let [isOpen, setIsOpen] = useState(false)
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('')
+    const [Occup, setOccup] = useState('')
     const [Twitter, setTwitter] = useState('')
     const [Github, setGithub] = useState('')
     const [Linkedin, setLinkedin] = useState('')
-    const [Stack, setStack] = useState('')
+    const [Error, setError] = useState('')
+    function toinitials() {
+        setName('')
+        setEmail('')
+        setOccup('')
+        setTwitter('')
+        setGithub('')
+        setLinkedin('')
+        setError('')
+    }
+
     function closeModal() {
         setIsOpen(false)
+        setError('')
     }
 
     function openModal() {
         setIsOpen(true)
     }
 
+    function handleSubmit() {
+        console.log(Name, Email, Occup, Twitter, Github, Linkedin)
+    }
+    function message() {
+        if (Error === 'false') {
+            return (
+                <span className="text-xs font-semibold text-green-500">
+                    submitted successfully
+                </span>
+            )
+        } else if (Error === 'error') {
+            return (
+                <span className="text-xs font-semibold absolute text-red-500">
+                    There was some error
+                </span>
+            )
+        } else if (Error === 'fieldsNF') {
+            return (
+                <span className="text-xs font-semibold mt-2 text-center text-red-500">
+                    All fields are required
+                </span>
+            )
+        }
+    }
     return (
         <>
             <div
@@ -76,40 +112,93 @@ export default function Modal() {
                                 </Dialog.Title>
                                 <div className="mt-2">
                                     <form
-                                        action=""
                                         className="mentor-form text-black flex flex-col"
+                                        onSubmit={e => {
+                                            e.preventDefault()
+                                            if (
+                                                Name &&
+                                                Email &&
+                                                Occup &&
+                                                Twitter &&
+                                                Github &&
+                                                Linkedin
+                                            ) {
+                                                try {
+                                                    handleSubmit()
+                                                    setError('false')
+                                                } catch (err) {
+                                                    setError('error')
+                                                }
+                                                setTimeout(() => {
+                                                    closeModal()
+                                                    toinitials()
+                                                }, 2000)
+                                            } else {
+                                                setError('fieldsNF')
+                                            }
+                                        }}
                                     >
-                                        <label htmlFor="Name">Name</label>
-                                        <input type="text" className={input} />
+                                        <label htmlFor="Name">Full Name</label>
+                                        <input
+                                            type="text"
+                                            className={input}
+                                            onChange={e => {
+                                                setName(e.target.value)
+                                            }}
+                                        />
                                         <label htmlFor="Email">Email</label>
-                                        <input type="text" className={input} />
+                                        <input
+                                            type="text"
+                                            className={input}
+                                            onChange={e => {
+                                                setEmail(e.target.value)
+                                            }}
+                                        />
                                         <label htmlFor="Email">
                                             Occupation(ex. Fullstack Dev)
                                         </label>
-                                        <input type="text" className={input} />
+                                        <input
+                                            type="text"
+                                            className={input}
+                                            onChange={e => {
+                                                setOccup(e.target.value)
+                                            }}
+                                        />
                                         <h1 className="text-lg font-bold">
                                             Socials
                                         </h1>
                                         <label htmlFor="Twitter">Twitter</label>
-                                        <input type="text" className={input} />
+                                        <input
+                                            type="text"
+                                            className={input}
+                                            onChange={e => {
+                                                setTwitter(e.target.value)
+                                            }}
+                                        />
                                         <label htmlFor="Github">Github</label>
-                                        <input type="text" className={input} />
+                                        <input
+                                            type="text"
+                                            className={input}
+                                            onChange={e => {
+                                                setGithub(e.target.value)
+                                            }}
+                                        />
                                         <label htmlFor="Linkedin">
                                             Linkedin
                                         </label>
-                                        <input type="link" className={input} />
-                                        <label htmlFor="Linkedin">
-                                            Stackoverflow
-                                        </label>
-                                        <input type="text" className={input} />
-                                        <button
-                                            type="button"
-                                            className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                                        >
+                                        <input
+                                            type="link"
+                                            className={input}
+                                            onChange={e => {
+                                                setLinkedin(e.target.value)
+                                            }}
+                                        />
+
+                                        {message()}
+                                        <button className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                                             Submit
                                         </button>
                                         <button
-                                            type="button"
                                             className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                                             onClick={closeModal}
                                         >

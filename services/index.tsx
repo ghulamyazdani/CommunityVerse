@@ -53,3 +53,13 @@ export const putLikes = async (obj: any) => {
         body: JSON.stringify(obj),
     })
 }
+
+export const postMentors = async (obj: any) => {
+    const result = await fetch('/api/mentors', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    })
+}
