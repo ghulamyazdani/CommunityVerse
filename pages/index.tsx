@@ -12,6 +12,7 @@ import Main from '../components/Main'
 import Header from '../components/Header'
 import Techs from '../components/Techs'
 import Mentors from '../components/Mentors'
+import Rocketanim from '../components/Icons/Rocketanim'
 import Testimonials from '../components/Testimonials'
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
@@ -46,6 +47,7 @@ const Home: NextPage<any> = ({ posts }) => {
                 </div>
             </div>
             <Testimonials />
+            <Rocketanim />
             {/* <ToTop /> */}
         </div>
     )
