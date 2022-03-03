@@ -6,6 +6,7 @@ import Darkmode from './Darkmode'
 import Search from './Search'
 import { BiSearchAlt } from 'react-icons/bi'
 import { FaGithub, FaDiscord } from 'react-icons/fa'
+import { HiMenuAlt3 } from 'react-icons/hi'
 import Logo from './Icons/Logo'
 
 export default function Header({ posts, pos }: any) {
@@ -22,7 +23,7 @@ export default function Header({ posts, pos }: any) {
                         : ' w-full z-10'
                 }
             >
-                <nav className="flex flex-auto m-3 justify-around items-center opacity-80">
+                <nav className="flex flex-auto m-3 mx-5 lg:mx-0 justify-between lg:justify-around items-center opacity-80">
                     <Link href="/" passHref>
                         <h2 className="cursor-pointer w-48 mt-[-0.5rem] font-Port flex flex-row text-3xl">
                             <Logo />
@@ -38,7 +39,7 @@ export default function Header({ posts, pos }: any) {
                         <li>Articles</li>
                         <li>Top Blogs</li>
                     </ul>
-                    <div className="search  flex gap-5 flex-row justify-between text-black items-center dark:text-white">
+                    <div className="search lg:flex hidden  md:flex gap-5 flex-row justify-between text-black items-center dark:text-white">
                         {/* <Search posts={posts} /> */}
                         <BiSearchAlt
                             className="h-7 w-7 cursor-pointer"
@@ -62,6 +63,7 @@ export default function Header({ posts, pos }: any) {
                         </a>
                         <Darkmode />
                     </div>
+                    <HiMenuAlt3 className="h-6 w-6 relative md:hidden lg:hidden " />
                 </nav>
             </header>
             <Search active={Active} posts={posts} />
