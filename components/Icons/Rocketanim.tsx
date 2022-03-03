@@ -1,29 +1,30 @@
 import React, { useRef, useEffect, useState } from 'react'
 export default function Rocketanim() {
-    const [Show, setShow] = useState(true)
-    const [Top, setTop] = useState(false)
-    // useEffect(function mount() {
-    //     window.onscroll = function () {
-    //         scrollFunction()
-    //     }
+    const [Show, setShow] = useState(false)
+    //https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
-    //     function scrollFunction() {
-    //         if (
-    //             document.body.scrollTop > 20 ||
-    //             document.documentElement.scrollTop > 20
-    //         ) {
-    //             setShow(true)
-    //         } else {
-    //             setShow(false)
-    //         }
-    //     }
+    //Get the button:
 
-    //     // When the user clicks on the button, scroll to the top of the document
-    //     function topFunction() {
-    //         document.body.scrollTop = 0 // For Safari
-    //         document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
-    //     }
-    // })
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    }
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            setShow(true)
+        } else {
+            setShow(false)
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0 // For Safari
+        document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
     return (
         <svg
             className={
@@ -33,6 +34,7 @@ export default function Rocketanim() {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 500 500"
+            onClick={topFunction}
         >
             <defs>
                 <linearGradient

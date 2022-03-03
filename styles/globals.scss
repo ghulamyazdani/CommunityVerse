@@ -214,7 +214,7 @@ ol {
   }
 }
 .grow{
-  width: 5rem;
+  width: 7rem;
     position: fixed;
     z-index: 11111;
     bottom: 1rem;
@@ -509,6 +509,9 @@ svg {
       }
     }
   }
+  .grow{
+    width: 5rem;
+  }
 }
 @media (max-width: 626px) {
   .search {
@@ -518,4 +521,5 @@ svg {
       }
     }
   }
+  
 }

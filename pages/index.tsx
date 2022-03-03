@@ -12,10 +12,12 @@ import Main from '../components/Main'
 import Header from '../components/Header'
 import Techs from '../components/Techs'
 import Mentors from '../components/Mentors'
-import Rocketanim from '../components/Icons/Rocketanim'
 import Testimonials from '../components/Testimonials'
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
-
+import dynamic from 'next/dynamic'
+const Rocketanim = dynamic(() => import('../components/Icons/Rocketanim'), {
+    ssr: false,
+})
 // import ToTop from '../components/use/ToTop'
 
 const Home: NextPage<any> = ({ posts }) => {
