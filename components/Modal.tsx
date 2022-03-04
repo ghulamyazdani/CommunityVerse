@@ -27,6 +27,8 @@ export default function Modal() {
         setLinkedin('')
         setBio('')
         setError('')
+        setprog(0)
+        setImageUrl('')
     }
     function closeModal() {
         setIsOpen(false)
@@ -86,6 +88,7 @@ export default function Modal() {
                     (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
                 )
                 setprog(prog)
+                console.log(prog)
             },
             error => console.log(error),
             () => {
@@ -172,7 +175,7 @@ export default function Modal() {
                                                     uploadImg(File)
                                                     setTimeout(() => {
                                                         handleSubmit()
-                                                    }, 2000)
+                                                    }, 5000)
                                                     setError('false')
                                                 } catch (err) {
                                                     setError('error')
