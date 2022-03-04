@@ -14,7 +14,7 @@ export default function Modal() {
     const [Github, setGithub] = useState('')
     const [Linkedin, setLinkedin] = useState('')
     const [Bio, setBio] = useState('')
-    const [File, setFile] = useState(null)
+    const [File, setFile] = useState(false)
     const [Error, setError] = useState('')
     const [ImageUrl, setImageUrl] = useState('')
     const [prog, setprog] = useState(0)
@@ -74,8 +74,8 @@ export default function Modal() {
         }
     }
     function fileSelectedHandler(e: any) {
-        setFile(e.target.files[0])
-        console.log(File)
+        uploadImg(e.target.files[0])
+        setFile(true)
     }
     function uploadImg(file: any) {
         if (!file) return
@@ -99,6 +99,11 @@ export default function Modal() {
                 })
             },
         )
+    }
+    function progressState(prog: any) {
+        if (prog > 0) {
+            return <div className="text-xs ml-3">{prog}% Uploaded</div>
+        }
     }
     return (
         <>
@@ -172,10 +177,8 @@ export default function Modal() {
                                                 File
                                             ) {
                                                 try {
-                                                    uploadImg(File)
-                                                    setTimeout(() => {
-                                                        handleSubmit()
-                                                    }, 5000)
+                                                    handleSubmit()
+
                                                     setError('false')
                                                 } catch (err) {
                                                     setError('error')
@@ -251,10 +254,14 @@ export default function Modal() {
                                                 setLinkedin(e.target.value)
                                             }}
                                         />
+                                        <label htmlFor="pic">
+                                            Upload your pic
+                                        </label>
                                         <input
                                             type="file"
                                             onChange={fileSelectedHandler}
                                         />
+                                        {progressState(prog)}
                                         {message()}
                                         <button className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                                             Submit
