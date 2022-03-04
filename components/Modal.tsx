@@ -47,7 +47,7 @@ export default function Modal() {
             github: Github,
             linkedin: Linkedin,
             status: 'Not Verified',
-            image: ImageUrl,
+            // image: ImageUrl,
         })
     }
     function message() {
