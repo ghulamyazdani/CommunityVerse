@@ -1,8 +1,10 @@
+const token: any = process.env.TOKEN
 export const submitComment = async (obj: any) => {
     const result = await fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            token: 'present',
         },
         body: JSON.stringify(obj),
     })
@@ -15,8 +17,10 @@ export const getLike = async (slug: any) => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            token: 'present',
         },
     })
+    console.log(token)
     const resData = await res.json()
     const likes = resData.filter((element: any) => {
         if (element.slug === slug) {
@@ -37,6 +41,7 @@ export const postLikes = async (obj: any) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            token: 'present',
         },
         body: JSON.stringify(obj),
     })
@@ -49,6 +54,7 @@ export const putLikes = async (obj: any) => {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
+            token: 'present',
         },
         body: JSON.stringify(obj),
     })
@@ -59,6 +65,7 @@ export const postMentors = async (obj: any) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            token: 'present',
         },
         body: JSON.stringify(obj),
     })
