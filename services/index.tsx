@@ -55,7 +55,7 @@ export const putLikes = async (obj: any) => {
 }
 
 export const postMentors = async (obj: any) => {
-    const result = await fetch('/api/mentors', {
+    const result = await fetch('/api/Mentors', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
