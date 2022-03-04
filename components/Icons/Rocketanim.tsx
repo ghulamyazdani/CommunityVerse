@@ -27,9 +27,7 @@ export default function Rocketanim() {
     }
     return (
         <svg
-            className={
-                Show ? `grow cursor-pointer` : `grow cursor-pointer hidden`
-            }
+            className={Show ? `grow cursor-pointer z-10` : ` hidden`}
             id="myBtn"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"

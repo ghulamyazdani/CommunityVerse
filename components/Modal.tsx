@@ -2,6 +2,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { IoIosAddCircle } from 'react-icons/io'
 import { postMentors } from '../services/index'
+import { app, storage } from '../services/firebase'
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 const input = `shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`
 export default function Modal() {
     let [isOpen, setIsOpen] = useState(false)
@@ -12,7 +14,10 @@ export default function Modal() {
     const [Github, setGithub] = useState('')
     const [Linkedin, setLinkedin] = useState('')
     const [Bio, setBio] = useState('')
+    const [File, setFile] = useState(null)
     const [Error, setError] = useState('')
+    const [ImageUrl, setImageUrl] = useState('')
+    const [prog, setprog] = useState(0)
     function toinitials() {
         setName('')
         setEmail('')
@@ -42,6 +47,7 @@ export default function Modal() {
             github: Github,
             linkedin: Linkedin,
             status: 'Not Verified',
+            image: ImageUrl,
         })
     }
     function message() {
@@ -64,6 +70,32 @@ export default function Modal() {
                 </span>
             )
         }
+    }
+    function fileSelectedHandler(e: any) {
+        setFile(e.target.files[0])
+        console.log(File)
+    }
+    function uploadImg(file: any) {
+        if (!file) return
+        const storageRef = ref(storage, `/mentors/${file.name}`)
+        const uploadTask = uploadBytesResumable(storageRef, file)
+        uploadTask.on(
+            'state_changed',
+            snapshot => {
+                const prog = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
+                )
+                setprog(prog)
+            },
+            error => console.log(error),
+            () => {
+                // Handle successful uploads on complete
+                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+                    setImageUrl(downloadURL)
+                })
+            },
+        )
     }
     return (
         <>
@@ -133,10 +165,14 @@ export default function Modal() {
                                                 Twitter &&
                                                 Github &&
                                                 Linkedin &&
-                                                Bio
+                                                Bio &&
+                                                File
                                             ) {
                                                 try {
-                                                    handleSubmit()
+                                                    uploadImg(File)
+                                                    setTimeout(() => {
+                                                        handleSubmit()
+                                                    }, 2000)
                                                     setError('false')
                                                 } catch (err) {
                                                     setError('error')
@@ -212,7 +248,10 @@ export default function Modal() {
                                                 setLinkedin(e.target.value)
                                             }}
                                         />
-
+                                        <input
+                                            type="file"
+                                            onChange={fileSelectedHandler}
+                                        />
                                         {message()}
                                         <button className="inline-flex mt-5 align-center justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                                             Submit
