@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
+    env: {
+        token: process.env.TOKEN,
+    },
 }
 
 const withMDX = require('@next/mdx')({

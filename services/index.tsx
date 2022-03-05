@@ -1,10 +1,10 @@
-const token: any = process.env.TOKEN
+const token: any = process.env.NEXT_PUBLIC_TOKEN
 export const submitComment = async (obj: any) => {
     const result = await fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            token: 'present',
+            token: token,
         },
         body: JSON.stringify(obj),
     })
@@ -13,11 +13,12 @@ export const submitComment = async (obj: any) => {
 }
 
 export const getLike = async (slug: any) => {
+    console.log(token)
     const res = await fetch(`/api/likes`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            token: 'present',
+            token: token,
         },
     })
     console.log(token)
@@ -41,7 +42,7 @@ export const postLikes = async (obj: any) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            token: 'present',
+            token: token,
         },
         body: JSON.stringify(obj),
     })
