@@ -34,10 +34,14 @@ export default function Header({ posts, pos }: any) {
                             <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <Link href="/#articles">Mentors</Link>
+                            <Link href="/#mentors"> Mentors</Link>
                         </li>
-                        <li>Articles</li>
-                        <li>Top Blogs</li>
+                        <li>
+                            <Link href="/#articles">Articles</Link>
+                        </li>
+                        <li>
+                            <Link href="/#articles">Top Blogs</Link>
+                        </li>
                     </ul>
                     <div className="search lg:flex hidden  md:flex gap-5 flex-row justify-between text-black items-center dark:text-white">
                         {/* <Search posts={posts} /> */}

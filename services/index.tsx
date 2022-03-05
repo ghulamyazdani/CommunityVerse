@@ -13,7 +13,6 @@ export const submitComment = async (obj: any) => {
 }
 
 export const getLike = async (slug: any) => {
-    console.log(token)
     const res = await fetch(`/api/likes`, {
         method: 'GET',
         headers: {
@@ -21,7 +20,6 @@ export const getLike = async (slug: any) => {
             token: token,
         },
     })
-    console.log(token)
     const resData = await res.json()
     const likes = resData.filter((element: any) => {
         if (element.slug === slug) {

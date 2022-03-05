@@ -33,7 +33,7 @@ const Home: NextPage<any> = ({ posts }) => {
 
             <div
                 id="articles"
-                className="px-0 backdrop-opacity-10 dark:backdrop-opacity-70 backdrop-invert dark:bg-[#000000] bg-white/30 lg:px-20"
+                className="px-0 backdrop-opacity-10 flex flex-col items-center justify-center dark:backdrop-opacity-70 backdrop-invert dark:bg-[#000000] bg-white/30 lg:px-20"
             >
                 <h1 className="text-center text-4xl pt-4">Read and Learn</h1>
                 <div className="posts pb-10 p-4">
@@ -43,10 +43,10 @@ const Home: NextPage<any> = ({ posts }) => {
                         }
                     })}
                 </div>
-                <div className="post link--arrowed items-end cursor-pointer text-center text-md  flex flex-row justify-center  gap-3">
+                <p className="post link--arrowed border-2 py-1 px-2 rounded-lg m-0 items-end cursor-pointer text-center text-md my-16 flex flex-row justify-center  gap-3">
                     View All Articles
                     <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
-                </div>
+                </p>
             </div>
             <Testimonials />
             <Rocketanim />
