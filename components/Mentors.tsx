@@ -6,7 +6,7 @@ export default function Mentors() {
     return (
         <div id="mentors" className="flex flex-col justify-center items-center">
             <h1 className="text-center text-4xl mb-4">Mentors</h1>
-            <h1 className="opacity-70">
+            <h1 className="opacity-70 px-4 text-center">
                 Get your issues resolved by our mentors ,yes its all free just
                 go ahead and asked them for help in any sort of issues{' '}
             </h1>

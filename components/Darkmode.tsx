@@ -5,7 +5,11 @@ import { BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 const DarkMode: React.FC = ({ className }: any) => {
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
-    useEffect(() => setMounted(true), [])
+    useEffect(() => {
+        setMounted(true)
+        setTheme('dark')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <button

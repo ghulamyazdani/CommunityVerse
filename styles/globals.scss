@@ -512,5 +512,17 @@ svg {
       }
     }
   }
+  .nav{
+    display: flex;
+    position: absolute;
+    background: white;
+    color: black;
+    text-align: center;
+    /* left: 50%; */
+    align-items: center;
+    width: 89%;
+    top: 4rem;
+    flex-direction: column;
+  }
   
 }

@@ -43,7 +43,7 @@ const Home: NextPage<any> = ({ posts }) => {
                         }
                     })}
                 </div>
-                <p className="post link--arrowed border-2 py-1 px-2 rounded-lg m-0 items-end cursor-pointer text-center text-md my-16 flex flex-row justify-center  gap-3">
+                <p className="post link--arrowed border-2 py-1 px-2 rounded-lg m-0 items-end cursor-pointer text-center text-md my-10 flex flex-row justify-center  gap-3">
                     View All Articles
                     <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
                 </p>

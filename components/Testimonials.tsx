@@ -9,7 +9,7 @@ export default function Testimonials() {
                     Testimonials
                 </h1>
                 <div className="flex justify-center flex-wrap -m-4">
-                    <div className="p-4 md:w-1/3 w-full">
+                    <div className="p-4 md:w-1/3 w-full ">
                         <div className="h-full bg-gray-100 p-8 rounded">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
