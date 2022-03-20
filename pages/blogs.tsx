@@ -24,7 +24,7 @@ const Home: NextPage<any> = ({ posts }) => {
             <h1 className=" pt-32 pb-10 text-2xl font-bold text-center md:text-4xl">
                 Articles
             </h1>
-            <div className="grid gap-8 pb-10 justify-center grid-cols-none md:grid-cols-1 md:max-w-sm  lg:grid-cols-2 md:gap-16 lg:max-w-4xl mx-auto">
+            <div className="grid gap-8 pb-10 py-3 justify-center grid-cols-none md:grid-cols-1 md:max-w-sm  lg:grid-cols-2 md:gap-16 lg:max-w-4xl mx-auto">
                 {posts.map((post: postInt, index: number) => {
                     return <Post key={index} post={post} />
                 })}
