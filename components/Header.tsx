@@ -7,10 +7,12 @@ import Search from './Search'
 import { BiSearchAlt } from 'react-icons/bi'
 import { FaGithub, FaDiscord } from 'react-icons/fa'
 import { HiMenuAlt3 } from 'react-icons/hi'
+import { AiOutlineClose } from 'react-icons/ai'
 import Logo from './Icons/Logo'
-
+import MobileNav from './MobileNav'
 export default function Header({ posts, pos }: any) {
     const [Active, setActive] = useState(false)
+    const [nav, setNav] = useState(false)
     const handleSearch = () => {
         setActive(!Active)
     }
@@ -67,10 +69,20 @@ export default function Header({ posts, pos }: any) {
                         </a>
                         <Darkmode />
                     </div>
-                    <HiMenuAlt3 className="h-6 w-6 relative md:hidden lg:hidden " />
+                    <div
+                        className="relative md:hidden lg:hidden"
+                        onClick={() => setNav(!nav)}
+                    >
+                        {nav ? (
+                            <AiOutlineClose className="h-6 w-6 " />
+                        ) : (
+                            <HiMenuAlt3 className="h-6 w-6 " />
+                        )}
+                    </div>
                 </nav>
             </header>
             <Search active={Active} posts={posts} />
+            <MobileNav posts={posts} nav={nav} />
         </>
     )
 }
