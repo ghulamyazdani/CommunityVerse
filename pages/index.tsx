@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import '../styles/Home.module.scss'
 import fs from 'fs'
 import path from 'path'
@@ -43,10 +44,12 @@ const Home: NextPage<any> = ({ posts }) => {
                         }
                     })}
                 </div>
-                <p className="post link--arrowed border-2 py-1 px-2 rounded-lg m-0 items-end cursor-pointer text-center text-md my-10 flex flex-row justify-center  gap-3">
-                    View All Articles
-                    <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
-                </p>
+                <Link href="/blogs" passHref>
+                    <p className="post link--arrowed border-2 py-1 px-2 rounded-lg m-0 items-end cursor-pointer text-center text-md my-10 flex flex-row justify-center  gap-3">
+                        View All Articles
+                        <HiOutlineArrowNarrowRight className="arrow-icon w-6 h-6" />
+                    </p>
+                </Link>
             </div>
             <Testimonials />
             <Rocketanim />

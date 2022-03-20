@@ -5,7 +5,7 @@ import '../styles/Home.module.scss'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import MainPosts from '../components/MainPosts'
+import Post from '../components/Post'
 import { postInt } from '../types/interface'
 import { sortByDate } from '../utils'
 import Header from '../components/Header'
@@ -20,140 +20,16 @@ const Rocketanim = dynamic(() => import('../components/Icons/Rocketanim'), {
 const Home: NextPage<any> = ({ posts }) => {
     return (
         <div className="dark:bg-[#0E1A38] transition-transform">
-            <Header posts={posts} />
-            <div className="h-screen flex flex-col items-center justify-center">
-                <div className="w-1/2 flex flex-col mt-5">
-                    <header className="flex flex-row gap-3 items-center">
-                        <img
-                            src="https://picsum.photos/30/30"
-                            className="rounded-full"
-                        />
-                        <div> Stephan Tromer </div>
-                        <div className="text-sm text-gray-500"> Jan 13 </div>
-                    </header>
-
-                    <div className="grid grid-cols-4 gap-3">
-                        <div className="col-span-3 flex flex-col">
-                            <div className="font-bold text-lg pt-3">
-                                Go (Golang) with Structs and Interfaces
-                            </div>
-
-                            <div className="font-light text-sm pt-2">
-                                Although it would be possible for us to write
-                                programs only using Go’s built-in data types, at
-                                some point, it would become quite tedious.
-                                Consider a program that....
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <img src="https://picsum.photos/100/100" />
-                        </div>
-                    </div>
-
-                    <footer className="flex flex-row pt-7 gap-3 items-center">
-                        <button className="hover:bg-gray-300 delay-100 duration-100 bg-gray-200 rounded-full py-1 px-2 text-xs">
-                            Tutorial
-                        </button>
-
-                        <div className="text-gray-500 text-xs">7 min read</div>
-
-                        <div className="text-gray-500 text-xs">
-                            Based on your reading history
-                        </div>
-                    </footer>
-
-                    <hr className="mt-5" />
-                </div>
-
-                <div className="w-1/2 flex flex-col mt-5">
-                    <header className="flex flex-row gap-3 items-center">
-                        <img
-                            src="https://picsum.photos/30/30"
-                            className="rounded-full"
-                        />
-                        <div> Stephan Tromer </div>
-                        <div className="text-sm text-gray-500"> Jan 13 </div>
-                    </header>
-
-                    <div className="grid grid-cols-4 gap-3">
-                        <div className="col-span-3 flex flex-col">
-                            <div className="font-bold text-lg pt-3">
-                                Go (Golang) with Structs and Interfaces
-                            </div>
-
-                            <div className="font-light text-sm pt-2">
-                                Although it would be possible for us to write
-                                programs only using Go’s built-in data types, at
-                                some point, it would become quite tedious.
-                                Consider a program that....
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <img src="https://picsum.photos/100/100" />
-                        </div>
-                    </div>
-
-                    <footer className="flex flex-row pt-7 gap-3 items-center">
-                        <button className="hover:bg-gray-300 delay-100 duration-100 bg-gray-200 rounded-full py-1 px-2 text-xs">
-                            Tutorial
-                        </button>
-
-                        <div className="text-gray-500 text-xs">7 min read</div>
-
-                        <div className="text-gray-500 text-xs">
-                            Based on your reading history
-                        </div>
-                    </footer>
-
-                    <hr className="mt-5" />
-                </div>
-
-                <div className="w-1/2 flex flex-col mt-5">
-                    <header className="flex flex-row gap-3 items-center">
-                        <img
-                            src="https://picsum.photos/30/30"
-                            className="rounded-full"
-                        />
-                        <div> Stephan Tromer </div>
-                        <div className="text-sm text-gray-500"> Jan 13 </div>
-                    </header>
-
-                    <div className="grid grid-cols-4 gap-3">
-                        <div className="col-span-3 flex flex-col">
-                            <div className="font-bold text-lg pt-3">
-                                Go (Golang) with Structs and Interfaces
-                            </div>
-
-                            <div className="font-light text-sm pt-2">
-                                Although it would be possible for us to write
-                                programs only using Go’s built-in data types, at
-                                some point, it would become quite tedious.
-                                Consider a program that....
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <img src="https://picsum.photos/100/100" />
-                        </div>
-                    </div>
-
-                    <footer className="flex flex-row pt-7 gap-3 items-center">
-                        <button className="hover:bg-gray-300 delay-100 duration-100 bg-gray-200 rounded-full py-1 px-2 text-xs">
-                            Tutorial
-                        </button>
-
-                        <div className="text-gray-500 text-xs">7 min read</div>
-
-                        <div className="text-gray-500 text-xs">
-                            Based on your reading history
-                        </div>
-                    </footer>
-
-                    <hr className="mt-5" />
-                </div>
+            <Header posts={posts} pos={true} />
+            <h1 className=" pt-32 pb-10 text-2xl font-bold text-center md:text-4xl">
+                Articles
+            </h1>
+            <div className="grid gap-8 pb-10 justify-center grid-cols-none md:grid-cols-1 md:max-w-sm  lg:grid-cols-2 md:gap-16 lg:max-w-4xl mx-auto">
+                {posts.map((post: postInt, index: number) => {
+                    return <Post key={index} post={post} />
+                })}
             </div>
+            <Rocketanim />
         </div>
     )
 }

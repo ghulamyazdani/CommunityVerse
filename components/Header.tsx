@@ -37,7 +37,7 @@ export default function Header({ posts, pos }: any) {
                             <Link href="/#mentors"> Mentors</Link>
                         </li>
                         <li>
-                            <Link href="/#articles">Articles</Link>
+                            <Link href="/blogs">Articles</Link>
                         </li>
                         <li>
                             <Link href="/#articles">Top Blogs</Link>
