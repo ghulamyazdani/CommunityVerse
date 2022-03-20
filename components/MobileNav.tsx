@@ -7,8 +7,9 @@ import { FaGithub, FaDiscord } from 'react-icons/fa'
 import { HiMenuAlt3 } from 'react-icons/hi'
 import Logo from './Icons/Logo'
 
-export default function MobileNav({ posts, nav }: any) {
+export default function MobileNav({ posts, nav, setNav }: any) {
     const [Active, setActive] = useState(false)
+
     const handleSearch = () => {
         setActive(!Active)
     }
@@ -19,16 +20,32 @@ export default function MobileNav({ posts, nav }: any) {
             } lg:hidden md:hidden left-[10%] align-center text-center bg-black z-10 w-[80%] flex flex-col gap-5 justify-center items-center top-20`}
         >
             <ul className="dark:text-white flex flex-col gap-10  text-black ">
-                <li>
+                <li
+                    onClick={() => {
+                        setNav(!nav)
+                    }}
+                >
                     <Link href="/">Home</Link>
                 </li>
-                <li>
+                <li
+                    onClick={() => {
+                        setNav(!nav)
+                    }}
+                >
                     <Link href="/#mentors"> Mentors</Link>
                 </li>
-                <li>
+                <li
+                    onClick={() => {
+                        setNav(!nav)
+                    }}
+                >
                     <Link href="/blogs">Articles</Link>
                 </li>
-                <li>
+                <li
+                    onClick={() => {
+                        setNav(!nav)
+                    }}
+                >
                     <Link href="/#articles">Top Blogs</Link>
                 </li>
             </ul>

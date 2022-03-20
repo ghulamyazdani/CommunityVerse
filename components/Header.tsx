@@ -82,7 +82,7 @@ export default function Header({ posts, pos }: any) {
                 </nav>
             </header>
             <Search active={Active} posts={posts} />
-            <MobileNav posts={posts} nav={nav} />
+            <MobileNav posts={posts} nav={nav} setNav={setNav} />
         </>
     )
 }
