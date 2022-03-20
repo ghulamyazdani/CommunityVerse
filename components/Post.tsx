@@ -8,7 +8,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 export default function Post({ post }: postprop) {
     return (
         <Link href={`/blog/${post.slug}`}>
-            <div className="card align-center flex flex-col align-middle cursor-pointer hover:drop-shadow-3xl  ">
+            <div className="card w-[22rem] md:w-[25rem] align-center flex flex-col align-middle cursor-pointer hover:drop-shadow-3xl  ">
                 <div>
                     <img
                         src={post.frontmatter.cover_image}
