@@ -4,17 +4,23 @@ import Darkmode from './Darkmode'
 import Search from './Search'
 import { BiSearchAlt } from 'react-icons/bi'
 import { FaGithub, FaDiscord } from 'react-icons/fa'
-import { HiMenuAlt3 } from 'react-icons/hi'
-import Logo from './Icons/Logo'
-
+import { motion } from 'framer-motion'
 export default function MobileNav({ posts, nav, setNav }: any) {
     const [Active, setActive] = useState(false)
-
+    const config = {
+        type: 'spring',
+        damping: 20,
+        stiffness: 100,
+    }
     const handleSearch = () => {
         setActive(!Active)
     }
     return (
-        <div
+        <motion.div
+            transition={config}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ x: 0, opacity: 0 }}
             className={`mob-nav ${
                 nav ? 'absolute' : 'hidden'
             } lg:hidden md:hidden left-[10%] align-center text-center bg-black z-10 w-[80%] flex flex-col gap-5 justify-center items-center top-20`}
@@ -74,6 +80,6 @@ export default function MobileNav({ posts, nav, setNav }: any) {
                 <Darkmode />
             </div>
             <Search className="top-40" active={Active} posts={posts} />
-        </div>
+        </motion.div>
     )
 }

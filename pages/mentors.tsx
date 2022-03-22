@@ -10,12 +10,13 @@ import { postInt } from '../types/interface'
 import { sortByDate } from '../utils'
 import Header from '../components/Header'
 import Link from 'next/link'
-
+import Mentors from '../components/Mentors'
 const Home: NextPage<any> = ({ posts }) => {
     const [value, setValue] = useState('something')
     return (
         <div>
             <Header posts={posts} pos={true} />
+            <Mentors />
         </div>
     )
 }
