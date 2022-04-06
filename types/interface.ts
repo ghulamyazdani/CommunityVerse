@@ -27,3 +27,10 @@ export interface Related {
     slug: string
     tag: string
 }
+
+export interface Mentor {
+    name: string
+    position: string
+    description: string
+    image: string
+}
