@@ -14,6 +14,7 @@
     "@heroicons/react": "^1.0.5",
     "@mdx-js/loader": "^2.0.0",
     "@next/mdx": "^12.0.10",
+    "@reduxjs/toolkit": "^1.8.1",
     "disqus-react": "^1.1.2",
     "firebase": "^9.6.7",
     "framer-motion": "^6.2.8",
@@ -26,12 +27,16 @@
     "mongodb": "^4.3.1",
     "mongoose": "^6.2.1",
     "next": "12.0.8",
+    "next-redux-wrapper": "^7.0.5",
     "next-themes": "^0.0.15",
     "node-sass": "^6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "react-share": "^4.4.0"
+    "react-redux": "^7.2.8",
+    "react-share": "^4.4.0",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.1",
