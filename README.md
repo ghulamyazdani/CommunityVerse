@@ -1,4 +1,4 @@
-<h1>## Community verse website - The virtual world for all students</h1>
+<h1>## Community verse website - The virtual world for all students </h1>
 
 
 <div align="center">
