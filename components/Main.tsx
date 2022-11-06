@@ -43,7 +43,7 @@ export default function Main() {
             </section>
             <div className="main-content">
                 <h1 className="text-4xl mt-[-8rem] font-extrabold opacity-80">
-                    New Era Platform For Community Based Learning .
+                    New Era Platform For Community Based Learning In Metaverse .
                 </h1>
                 <p className="text-lg opacity-70">
                     Bridging gap between mentors and students.
