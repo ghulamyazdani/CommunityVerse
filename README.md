@@ -1,4 +1,4 @@
-### Community verse website - The virtual world for all students 
+# Community verse website - The virtual world for all students 
 
 
 <div align="center">
