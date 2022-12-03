@@ -1,4 +1,4 @@
-<h1>## Community verse website - The virtual world for all students </h1>
+### Community verse website - The virtual world for all students 
 
 
 <div align="center">
@@ -8,29 +8,29 @@
 
 </div>
 
-<h2> 🌟 About</h2>
+## 🌟 About
 
 This is my vission which will reduce the gap between mentors and students.There are so many students who are not able to find the right mentor or not able to find a mentor at all. So for that I come up with the idea of creating a platform where students can find the mentor for themselves.
 
 
-<h2> 🧰 Setup</h2>
+ ## 🧰 Setup
 
 - By forking, clone the repository in your local system.
 - Run `npm install` in Terminal it will Install all the dependencies which is required for this project.
 - Run `npm start` To run the website on your local repository.
 
-<h2> ⚡ Requirements</h2>
+ ##⚡ Requirements
 
 - Your **node version** should be above v16.
 - Downlaod the latest version of **npm**.
 - Downloading **Eslint** and **prettier** will be plus.
 
-<h2> 🧑‍🤝‍🧑 How to contribute</h2>
+## 🧑‍🤝‍🧑 How to contribute
 
 Follow the steps given in contributing.md in order to contribute to this project.
 
 
-<h2> 👨‍💻 Project Admin</h2>
+## 👨‍💻 Project Admin
 
   <div align="center">
 <table>
